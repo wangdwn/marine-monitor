@@ -1,0 +1,191 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* ── Report HTML Content Styles ── */
+.report-html-content {
+  color: #2D2D2D;
+  line-height: 1.8;
+}
+.report-html-content h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1B3A5C;
+  margin: 2rem 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #E2E5EA;
+}
+.report-html-content h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1A1D21;
+  margin: 1.5rem 0 0.75rem 0;
+}
+.report-html-content p {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+.report-html-content .highlight {
+  color: #1B3A5C;
+  font-weight: 600;
+  background: linear-gradient(180deg, transparent 60%, rgba(30,58,92,0.12) 60%);
+  padding: 0 2px;
+}
+.report-html-content ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+.report-html-content ul li {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+.report-html-content ul li::marker {
+  color: #2E7D9A;
+}
+.report-html-content .data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-size: 0.875rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+.report-html-content .data-table th {
+  background: linear-gradient(135deg, #1B3A5C, #2E7D9A);
+  color: white;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 500;
+}
+.report-html-content .data-table td {
+  padding: 0.625rem 1rem;
+  border-bottom: 1px solid #E2E5EA;
+  background: white;
+}
+.report-html-content .data-table tr:nth-child(even) td {
+  background: #F8F9FB;
+}
+.report-html-content .data-table tr:hover td {
+  background: #F0F2F5;
+}
+.report-html-content .chain-diagram {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: #F0F2F5;
+  border-radius: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.report-html-content .chain-block {
+  background: white;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  text-align: center;
+  font-size: 0.8rem;
+  min-width: 140px;
+}
+.report-html-content .chain-arrow {
+  font-size: 1.5rem;
+  color: #2E7D9A;
+  font-weight: bold;
+}
+.report-html-content .key-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.report-html-content .metric-box {
+  background: linear-gradient(135deg, #1B3A5C, #2E7D9A);
+  color: white;
+  padding: 1.25rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+.report-html-content .metric-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.report-html-content .metric-label {
+  font-size: 0.75rem;
+  opacity: 0.85;
+  margin-bottom: 0.25rem;
+}
+.report-html-content .metric-change {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #86EFAC;
+}
+.report-html-content .invest-tier {
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  margin: 0.75rem 0;
+  border-left: 4px solid;
+  font-size: 0.875rem;
+}
+.report-html-content .invest-tier.tier-1 {
+  background: #FEF3C7;
+  border-color: #D4823D;
+}
+.report-html-content .invest-tier.tier-2 {
+  background: #DBEAFE;
+  border-color: #2E7D9A;
+}
+.report-html-content .invest-tier.tier-3 {
+  background: #F0F2F5;
+  border-color: #6B7280;
+}
+.report-html-content .disclaimer {
+  margin-top: 2rem;
+  padding: 1rem 1.25rem;
+  background: #F0F2F5;
+  border-radius: 0.75rem;
+  font-size: 0.75rem;
+  color: #6B7280;
+  border: 1px dashed #D1D5DB;
+}
