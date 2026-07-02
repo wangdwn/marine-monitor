@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 12% 96%;
+    --foreground: 220 14% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 14% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 14% 10%;
+    --primary: 210 52% 23%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 20% 90%;
+    --secondary-foreground: 220 14% 10%;
+    --muted: 210 20% 90%;
+    --muted-foreground: 218 10% 45%;
+    --accent: 194 55% 39%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 55% 49%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 10% 88%;
+    --input: 220 10% 88%;
+    --ring: 210 52% 23%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 14% 10%;
+    --sidebar-primary: 210 52% 23%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 20% 94%;
+    --sidebar-accent-foreground: 220 14% 10%;
+    --sidebar-border: 220 10% 88%;
+    --sidebar-ring: 210 52% 23%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[#F0F2F5] text-[#1A1D21] antialiased;
+    font-family: "Noto Sans SC", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  * {
+    @apply border-[#E2E5EA];
+  }
+}
+
+@layer utilities {
+  .font-mono {
+    font-family: "JetBrains Mono", "SF Mono", monospace;
+  }
+  .shadow-card {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+  .shadow-card-hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+  }
+  .glass {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.85);
+  }
+  .gradient-primary {
+    background: linear-gradient(135deg, #1B3A5C 0%, #2E7D9A 100%);
+  }
+  .gradient-success {
+    background: linear-gradient(135deg, #4A8B5C 0%, #3A7A4C 100%);
+  }
+  .gradient-warning {
+    background: linear-gradient(135deg, #D4823D 0%, #C07030 100%);
+  }
+  .gradient-danger {
+    background: linear-gradient(135deg, #B54848 0%, #9A3838 100%);
+  }
+  .text-gradient {
+    background: linear-gradient(135deg, #1B3A5C 0%, #2E7D9A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .divider-v {
+    border-right: 1px solid #E2E5EA;
+  }
+  .divider-h {
+    border-bottom: 1px solid #E2E5EA;
+  }
+}

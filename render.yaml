@@ -1,0 +1,7 @@
+{
+  "rootDirectory": "app",
+  "buildCommand": "npm install && npm run build:full",
+  "startCommand": "npm start",
+  "nodeVersion": "20",
+  "framework": "node"
+}
