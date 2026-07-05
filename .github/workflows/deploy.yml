@@ -38,6 +38,7 @@ jobs:
         env:
           VITE_APP_ID: ${{ secrets.VITE_APP_ID }}
           VITE_KIMI_AUTH_URL: ${{ secrets.VITE_KIMI_AUTH_URL }}
+          VITE_BASE_PATH: '/marine-monitor/'
 
       - name: SPA fallback
         working-directory: app
