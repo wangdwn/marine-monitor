@@ -39,6 +39,10 @@ jobs:
           VITE_APP_ID: ${{ secrets.VITE_APP_ID }}
           VITE_KIMI_AUTH_URL: ${{ secrets.VITE_KIMI_AUTH_URL }}
 
+      - name: SPA fallback
+        working-directory: app
+        run: cp dist/index.html dist/404.html
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
