@@ -16,28 +16,45 @@ import {
   Megaphone,
   Activity,
   Globe,
+  FileBarChart,
+  Radar,
+  BarChart3,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
 // 导航项定义，包含所需最低权限级别
-const navItems = [
-  { path: "/", label: "数据看板", icon: LayoutDashboard, minLevel: 0 as const },
-  { path: "/survey", label: "资源调查", icon: Compass, minLevel: 1 },
-  { path: "/planning", label: "规划保障", icon: ClipboardList, minLevel: 1 },
-  { path: "/safety", label: "安全屏障", icon: ShieldCheck, minLevel: 1 },
-  { path: "/map", label: "产业地图", icon: MapPin, minLevel: 1 },
-  { path: "/reports", label: "分析报告", icon: FileText, minLevel: 1 },
-  { path: "/policies", label: "政策文件", icon: ScrollText, minLevel: 1 },
-  { path: "/collector", label: "数据采集", icon: Terminal, minLevel: 1 },
-  { path: "/funding", label: "基金申报", icon: Wallet, minLevel: 1 },
-  { path: "/announce", label: "公告中心", icon: Megaphone, minLevel: 1 },
-  { path: "/automation", label: "自动化中心", icon: Activity, minLevel: 1 },
-  { path: "/external", label: "全球报告", icon: Globe, minLevel: 2 }, // VIP专属
+// 整合方案（三盘一底座·经营盘）：栏目重组为 政策口径 / 产业数据 / 深度分析 / 招标雷达 / 安全预警
+// 其中「深度分析」吸收 #4 gz-marine-analysis，「招标雷达」吸收 #8 geo-ocean-bidding（保留后端，外链跳转）
+const navGroups = [
+  {
+    group: "经营盘 · 栏目",
+    items: [
+      { path: "/", label: "经营总览", icon: LayoutDashboard, minLevel: 0 as const },
+      { path: "/reports", label: "产业数据", icon: BarChart3, minLevel: 1 },
+      { path: "/policies", label: "政策口径", icon: ScrollText, minLevel: 1 },
+      { path: "/external-analysis", label: "深度分析", icon: FileBarChart, minLevel: 1, external: "https://wangdwn.github.io/gz-marine-analysis/" },
+      { path: "/external-bidding", label: "招标雷达", icon: Radar, minLevel: 1, external: "https://github.com/wangdwn/geo-ocean-bidding" },
+      { path: "/safety", label: "安全预警", icon: ShieldCheck, minLevel: 1 },
+    ],
+  },
+  {
+    group: "支撑模块",
+    items: [
+      { path: "/survey", label: "资源调查", icon: Compass, minLevel: 1 },
+      { path: "/planning", label: "规划保障", icon: ClipboardList, minLevel: 1 },
+      { path: "/map", label: "产业地图", icon: MapPin, minLevel: 1 },
+      { path: "/collector", label: "数据采集", icon: Terminal, minLevel: 1 },
+      { path: "/funding", label: "基金申报", icon: Wallet, minLevel: 1 },
+      { path: "/announce", label: "公告中心", icon: Megaphone, minLevel: 1 },
+      { path: "/automation", label: "自动化中心", icon: Activity, minLevel: 1 },
+      { path: "/external", label: "全球报告", icon: Globe, minLevel: 2 }, // VIP专属
+    ],
+  },
 ];
 
-// 根据用户权限级别过滤导航项
+// 根据用户权限级别过滤导航项（拍平分组）
 function getVisibleNavItems(roleLevel: number) {
-  return navItems.filter(item => (item.minLevel ?? 0) <= roleLevel);
+  return navGroups.flatMap(g => g.items).filter(item => (item.minLevel ?? 0) <= roleLevel);
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -91,24 +108,52 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
         {/* Nav */}
         <nav className="p-3 space-y-0.5">
-          {visibleNavItems.map((item) => {
-            const isActive = location.pathname === item.path;
-            const Icon = item.icon;
+          {navGroups.map((grp) => {
+            const items = grp.items.filter((item) => (item.minLevel ?? 0) <= (roleLevel ?? 0));
+            if (items.length === 0) return null;
             return (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 group ${
-                  isActive
-                    ? "bg-[#1B3A5C]/8 text-[#1B3A5C] font-medium"
-                    : "text-[#6B7280] hover:bg-[#F0F2F5] hover:text-[#1A1D21]"
-                }`}
-              >
-                <Icon className={`w-[18px] h-[18px] flex-shrink-0 ${isActive ? "text-[#1B3A5C]" : ""}`} />
+              <div key={grp.group}>
                 {sidebarOpen && (
-                  <span className="text-sm truncate">{item.label}</span>
+                  <div className="px-3 pt-3 pb-1 text-[10px] font-semibold uppercase tracking-wider text-[#9CA3AF]">
+                    {grp.group}
+                  </div>
                 )}
-              </Link>
+                {items.map((item) => {
+                  const isActive = !item.external && location.pathname === item.path;
+                  const Icon = item.icon;
+                  const cls = `flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 group ${
+                    isActive
+                      ? "bg-[#1B3A5C]/8 text-[#1B3A5C] font-medium"
+                      : "text-[#6B7280] hover:bg-[#F0F2F5] hover:text-[#1A1D21]"
+                  }`;
+                  if (item.external) {
+                    return (
+                      <a
+                        key={item.path}
+                        href={item.external}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={cls}
+                        title="外部站点（整合吸收）"
+                      >
+                        <Icon className="w-[18px] h-[18px] flex-shrink-0" />
+                        {sidebarOpen && (
+                          <span className="text-sm truncate flex-1">{item.label}</span>
+                        )}
+                        {sidebarOpen && <span className="text-[10px] text-[#9CA3AF]">↗</span>}
+                      </a>
+                    );
+                  }
+                  return (
+                    <Link key={item.path} to={item.path} className={cls}>
+                      <Icon className={`w-[18px] h-[18px] flex-shrink-0 ${isActive ? "text-[#1B3A5C]" : ""}`} />
+                      {sidebarOpen && (
+                        <span className="text-sm truncate">{item.label}</span>
+                      )}
+                    </Link>
+                  );
+                })}
+              </div>
             );
           })}
 
