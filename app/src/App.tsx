@@ -1,6 +1,5 @@
-import { Routes, Route } from "react-router";
+import { Routes, Route, Navigate } from "react-router";
 import Layout from "./components/Layout";
-import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import Dashboard from "./pages/Dashboard";
 import MapPage from "./pages/MapPage";
@@ -20,7 +19,8 @@ import ExternalPage from "./pages/ExternalPage";
 export default function App() {
   return (
     <Routes>
-      <Route path="/login" element={<Login />} />
+      {/* 整合方案：取消登录界面，/login 直接重定向首页，全站公开可用 */}
+      <Route path="/login" element={<Navigate to="/" replace />} />
       <Route
         path="*"
         element={

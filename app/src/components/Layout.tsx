@@ -59,7 +59,7 @@ function getVisibleNavItems(roleLevel: number) {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
-  const { user, logout, roleLevel } = useAuth();
+  const { user, roleLevel } = useAuth();
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [mobileOpen, setMobileOpen] = useState(false);
   const visibleNavItems = getVisibleNavItems(roleLevel ?? 0);
@@ -174,25 +174,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
         {/* Bottom */}
         <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-[#E2E5EA]">
-          {user ? (
-            <div className="flex items-center gap-3 px-1">
-              <div className="w-8 h-8 rounded-full bg-[#1B3A5C]/10 flex items-center justify-center flex-shrink-0">
-                <UserCircle className="w-4 h-4 text-[#1B3A5C]" />
-              </div>
-              {sidebarOpen && (
-                <div className="min-w-0 flex-1">
-                  <p className="text-sm font-medium text-[#1A1D21] truncate">{user.name ?? "用户"}</p>
-                  <button onClick={() => logout()} className="text-xs text-[#6B7280] hover:text-[#B54848] transition-colors">
-                    退出
-                  </button>
-                </div>
-              )}
+          {/* 整合方案：取消登录界面，全站公开访问 */}
+          <div className="flex items-center gap-3 px-1">
+            <div className="w-8 h-8 rounded-full bg-[#1B3A5C]/10 flex items-center justify-center flex-shrink-0">
+              <UserCircle className="w-4 h-4 text-[#1B3A5C]" />
             </div>
-          ) : (
-            <Link to="/login" className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#1B3A5C] text-white hover:bg-[#152D49] transition-colors text-sm">
-              登录
-            </Link>
-          )}
+            {sidebarOpen && (
+              <div className="min-w-0 flex-1">
+                <p className="text-sm font-medium text-[#1A1D21] truncate">公开访问</p>
+                <p className="text-xs text-[#6B7280]">无需登录 · 全栏目开放</p>
+              </div>
+            )}
+          </div>
         </div>
       </aside>
 

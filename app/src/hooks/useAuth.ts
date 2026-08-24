@@ -44,49 +44,39 @@ export function useAuth(options?: {
   }, [redirectOnUnauthenticated, isLoading, user, navigate, redirectPath]);
 
   // 判断用户角色级别
-  const roleLevel = useMemo(() => {
-    if (!user) return 0; // guest
-    if (user.role === 'admin') return 3;
-    if (user.role === 'vip') return 2;
-    if (user.role === 'user') return 1;
-    return 0;
-  }, [user?.role]);
+  // 整合方案：取消登录界面，默认以管理员身份直接使用（公开访问）
+  const roleLevel = 3;
+  const isAdmin = true;
+  const isVIP = true;
+  const normalizedRole: UserRole = 'admin';
 
-  // 判断是否有权限访问指定级别内容
-  const canAccess = useCallback((level: 'user' | 'vip') => {
-    if (level === 'user') return roleLevel >= 1;
-    if (level === 'vip') return roleLevel >= 2;
-    return false;
-  }, [roleLevel]);
+  // 后端无会话时，使用虚拟管理员身份（保证全部栏目/内容直接可用）
+  const effectiveUser = user ?? {
+    id: 0,
+    unionId: 'public',
+    name: '公开访问',
+    email: '',
+    role: 'admin',
+    avatar: '',
+  };
 
-  // 兼容旧代码的 isAdmin
-  const isAdmin = user?.role === 'admin';
-
-  // 将后端 role 标准化（后端可能返回不同格式）
-  const normalizedRole: UserRole = useMemo(() => {
-    if (!user) return 'guest';
-    const r = user.role?.toLowerCase();
-    if (r === 'admin') return 'admin';
-    if (r === 'vip') return 'vip';
-    if (r === 'user') return 'user';
-    return 'user'; // 已登录但无特定角色默认为 user
-  }, [user?.role]);
+  // 所有内容默认可访问（已取消登录与权限门禁）
+  const canAccess = useCallback(() => true, []);
 
   return useMemo(() => ({
-    user: user ? { ...user, role: normalizedRole } : null,
-    isAuthenticated: !!user,
-    isAdmin,
-    isVIP: normalizedRole === 'vip',
-    isGuest: !user,
-    role: normalizedRole,
-    roleLevel,
+    user: effectiveUser,
+    isAuthenticated: true,
+    isAdmin: true,
+    isVIP: true,
+    isGuest: false,
+    role: 'admin' as UserRole,
+    roleLevel: 3,
     canAccess,
     isLoading: isLoading || logoutMutation.isPending,
     error,
     logout,
     refresh: refetch,
   }), [
-    user, normalizedRole, isAdmin, roleLevel, canAccess,
-    isLoading, logoutMutation.isPending, error, logout, refetch
+    effectiveUser, isLoading, logoutMutation.isPending, error, logout, refetch
   ]);
 }
