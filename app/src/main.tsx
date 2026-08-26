@@ -5,7 +5,7 @@ import { TRPCProvider } from "@/providers/trpc"
 import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
-  <BrowserRouter>
+  <BrowserRouter basename={import.meta.env.BASE_URL}>
     <TRPCProvider>
       <App />
     </TRPCProvider>
