@@ -1,0 +1,38 @@
+name: 海智数科 funding 数据自动采集
+
+on:
+  schedule:
+    # 每周一 09:00（北京时间）自动采集；UTC 01:00
+    - cron: "0 1 * * 1"
+  workflow_dispatch:          # 手动触发按钮
+
+permissions:
+  contents: write             # 允许 push 数据回仓库
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉取仓库
+        uses: actions/checkout@v4
+
+      - name: 装 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 采集资助项目 + 融资动态
+        run: python3 collect_funding.py
+
+      - name: 有变化才提交
+        run: |
+          git config user.name "funding-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add app/public/data/funding.json
+          if git diff --cached --quiet; then
+            echo "数据无变化，跳过提交。"
+          else
+            git commit -m "chore: 自动采集 funding 数据 $(date +%Y-%m-%d)"
+            git push
+            echo "已推送最新 funding 数据，触发 Pages 重部署。"
+          fi

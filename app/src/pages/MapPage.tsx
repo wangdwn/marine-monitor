@@ -1,5 +1,4 @@
-import { trpc } from "@/providers/trpc";
-import { useState, useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
 import {
   MapPin,
   Anchor,
@@ -22,11 +21,25 @@ export default function MapPage() {
   const [selectedRegion, setSelectedRegion] = useState("");
   const [selectedType, setSelectedType] = useState("");
   const [selectedResource, setSelectedResource] = useState<number | null>(null);
+  const [allResources, setAllResources] = useState<any[]>([]);
 
-  const { data: resources } = trpc.map.resources.useQuery({
-    region: selectedRegion || undefined,
-    resourceType: selectedType || undefined,
-  });
+  // 从静态 JSON 加载数据（替代后端 trpc.map）
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}data/map.json`)
+      .then((r) => r.json())
+      .then((d) => setAllResources(d.resources ?? []))
+      .catch(() => setAllResources([]));
+  }, []);
+
+  const resources = useMemo(
+    () =>
+      allResources.filter(
+        (r) =>
+          (!selectedRegion || r.region === selectedRegion) &&
+          (!selectedType || r.resourceType === selectedType)
+      ),
+    [allResources, selectedRegion, selectedType]
+  );
 
   const selected = useMemo(
     () => resources?.find((r) => r.id === selectedResource) ?? null,

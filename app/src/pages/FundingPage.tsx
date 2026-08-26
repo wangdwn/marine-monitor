@@ -1,5 +1,4 @@
-import { trpc } from "@/providers/trpc";
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router";
 import {
   Wallet,
@@ -56,23 +55,50 @@ export default function FundingPage() {
   const [category, setCategory] = useState("");
   const [sourceLevel, setSourceLevel] = useState("");
   const [selectedId, setSelectedId] = useState<number | null>(null);
+  const [allFunds, setAllFunds] = useState<any[]>([]);
 
-  const { data: listData } = trpc.fund.list.useQuery({
-    page,
-    limit: 20,
-    search: search || undefined,
-    category: category || undefined,
-    sourceLevel: sourceLevel || undefined,
-  });
+  // 从静态 JSON 加载数据（替代后端 trpc.fund）
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}data/funding.json`)
+      .then((r) => r.json())
+      .then((d) => setAllFunds(d.items ?? []))
+      .catch(() => setAllFunds([]));
+  }, []);
 
-  const { data: stats } = trpc.fund.stats.useQuery();
-  const { data: hotFunds } = trpc.fund.hotList.useQuery();
-  const { data: detail } = trpc.fund.detail.useQuery(
-    { id: selectedId! },
-    { enabled: !!selectedId }
-  );
+  // 本地统计
+  const stats = useMemo(() => {
+    const total = allFunds.length;
+    const byCategory = ["基金类", "专项资金类", "国债类"].map((c) => ({
+      category: c,
+      count: allFunds.filter((f) => f.category === c).length,
+    }));
+    const byStatus = ["open", "ongoing", "upcoming", "closed"].map((s) => ({
+      status: s,
+      count: allFunds.filter((f) => f.status === s).length,
+    }));
+    return { total, byCategory, byStatus };
+  }, [allFunds]);
 
-  const totalPages = listData?.totalPages ?? 1;
+  const hotFunds = useMemo(() => allFunds.filter((f) => f.isHot), [allFunds]);
+
+  const filtered = useMemo(() => {
+    const q = search.trim().toLowerCase();
+    return allFunds.filter(
+      (f) =>
+        (!q ||
+          (f.name || "").toLowerCase().includes(q) ||
+          (f.supportDirection || "").toLowerCase().includes(q)) &&
+        (!category || f.category === category) &&
+        (!sourceLevel || f.sourceLevel === sourceLevel)
+    );
+  }, [allFunds, search, category, sourceLevel]);
+
+  const pageSize = 20;
+  const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+  const pageItems = filtered.slice((page - 1) * pageSize, page * pageSize);
+
+  const detail = allFunds.find((f) => f.id === selectedId) ?? null;
+  const listData = { items: pageItems, totalPages };
 
   const openDetail = (id: number) => {
     setSelectedId(id);

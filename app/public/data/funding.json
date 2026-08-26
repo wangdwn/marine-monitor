@@ -1,0 +1,1144 @@
+{
+  "updated": "2026-08-26",
+  "source": "360搜索增量采集 + 公开政策文件",
+  "count": 56,
+  "items": [
+    {
+      "name": "广东省海洋六大产业专项项目",
+      "category": "专项资金类",
+      "sourceLevel": "provincial",
+      "status": "ongoing",
+      "isHot": true,
+      "supportDirection": "海洋电子信息、海上风电、海洋生物医药、海洋工程装备、海洋公共服务、海洋油气化工六大产业，重点支持关键核心技术攻关与产业化。",
+      "amountRange": "年度专题经费约2.95亿元",
+      "sourceOrg": "广东省自然资源厅",
+      "contactDept": "广东省自然资源厅海洋规划与经济处",
+      "fundType": "无偿补助 / 事前资助",
+      "basisDoc": "《2024年省级促进经济高质量发展（海洋经济发展）海洋六大产业专项项目申报指南》",
+      "applicationProcess": "发布申报指南\n地市主管部门初审推荐\n省厅组织专家评审\n入库立项\n拨付专项资金",
+      "keyPoints": "广东海洋经济的核心专项，六大赛道全覆盖；企业须为涉海主体，项目未享受过同类省级补助。",
+      "tags": [
+        "海洋六大产业",
+        "省级专项",
+        "无偿补助"
+      ],
+      "id": 1
+    },
+    {
+      "name": "广东省海洋经济发展资金",
+      "category": "专项资金类",
+      "sourceLevel": "provincial",
+      "status": "closed",
+      "isHot": false,
+      "supportDirection": "支持海洋经济重点项目建设，同一企业相同或类似项目只能申请省级财政补助一次。",
+      "amountRange": "按项目核定",
+      "sourceOrg": "广东省海洋局 / 省财政厅",
+      "contactDept": "属地海洋主管部门",
+      "fundType": "无偿补助",
+      "basisDoc": "《关于组织申请2025年度省海洋经济发展资金的通知》",
+      "applicationProcess": "企业申报\n属地初审\n省级评审\n公示拨付",
+      "keyPoints": "补助项目应未享受过其他省级、县级财政专项资金；强调财政资金使用效率。",
+      "tags": [
+        "海洋经济",
+        "省级",
+        "财政补助"
+      ],
+      "id": 2
+    },
+    {
+      "name": "广东省海洋综合管理专项资金",
+      "category": "专项资金类",
+      "sourceLevel": "provincial",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "海域海岛管理、海洋调查、生态修复等海洋综合管理事项，项目入库全流程管理。",
+      "amountRange": "按项目入库核定",
+      "sourceOrg": "广东省自然资源厅",
+      "contactDept": "广东省自然资源厅海洋规划与经济处",
+      "fundType": "无偿补助",
+      "basisDoc": "《广东省海洋综合管理专项资金管理实施细则》",
+      "applicationProcess": "项目入库申报\n主管部门审核\n纳入项目库\n按年度安排资金",
+      "keyPoints": "依据涉海单位名录、年度重点工作要素及上年度资金使用效率等因素统筹安排。",
+      "tags": [
+        "海洋综合管理",
+        "专项资金",
+        "项目库"
+      ],
+      "id": 3
+    },
+    {
+      "name": "广东省捕捞业改造提升项目",
+      "category": "专项资金类",
+      "sourceLevel": "provincial",
+      "status": "closed",
+      "isHot": false,
+      "supportDirection": "支持捕捞渔船更新改造、渔业装备提升，推动传统捕捞业转型升级。",
+      "amountRange": "按渔船类型核定",
+      "sourceOrg": "广东省农业农村厅",
+      "contactDept": "属地农业农村（渔业）主管部门",
+      "fundType": "以奖代补",
+      "basisDoc": "《2025年广东省捕捞业改造提升项目申报指南》",
+      "applicationProcess": "渔民/企业申报\n县级审核\n市级汇总\n省级核定",
+      "keyPoints": "面向传统捕捞渔船，强调淘汰老旧、更新装备。",
+      "tags": [
+        "捕捞业",
+        "渔船改造",
+        "以奖代补"
+      ],
+      "id": 4
+    },
+    {
+      "name": "广东省重点领域研发计划「海洋科技」重大专项旗舰项目",
+      "category": "专项资金类",
+      "sourceLevel": "provincial",
+      "status": "closed",
+      "isHot": true,
+      "supportDirection": "面向海洋科技关键核心技术攻关，旗舰项目聚焦海洋高端装备、海洋生物资源开发等重大方向。",
+      "amountRange": "单个项目千万级",
+      "sourceOrg": "广东省科学技术厅",
+      "contactDept": "广东省科学技术厅资源配置管理处",
+      "fundType": "事前资助 / 无偿补助",
+      "basisDoc": "《关于组织申报2024年度广东省重点领域研发计划「海洋科技」重大专项旗舰项目的通知》",
+      "applicationProcess": "网上填报\n单位推荐\n形式审查\n专家评审\n立项公示",
+      "keyPoints": "旗舰项目定位重大突破，要求牵头单位具备高水平研发能力，鼓励产学研联合。",
+      "tags": [
+        "海洋科技",
+        "重大专项",
+        "旗舰项目"
+      ],
+      "id": 5
+    },
+    {
+      "name": "国家重点研发计划「海洋农业与淡水渔业科技创新」重点专项",
+      "category": "专项资金类",
+      "sourceLevel": "national",
+      "status": "ongoing",
+      "isHot": true,
+      "supportDirection": "海洋农业与淡水渔业科技创新，含水产种业、智能养殖装备、深海渔业资源开发等方向。",
+      "amountRange": "国家级重大专项",
+      "sourceOrg": "科学技术部 / 农业农村部",
+      "contactDept": "国家科技管理信息系统",
+      "fundType": "事前资助",
+      "basisDoc": "《国家重点研发计划「海洋农业与淡水渔业科技创新」等11个重点专项2025年度项目申报指南》",
+      "applicationProcess": "国家科技管理信息系统申报\n申报单位审核推荐\n专业机构评审\n立项批复",
+      "keyPoints": "2025年度11个重点专项集中发布；强调种业自主可控与深远海养殖装备。",
+      "tags": [
+        "国家重点研发",
+        "水产种业",
+        "深海渔业"
+      ],
+      "id": 6
+    },
+    {
+      "name": "南沙区船舶与海洋工程装备产业科技攻关项目",
+      "category": "专项资金类",
+      "sourceLevel": "district",
+      "status": "closed",
+      "isHot": false,
+      "supportDirection": "南沙区船舶与海洋工程装备产业关键核心技术攻关，支持区内企业开展装备研发与产业化。",
+      "amountRange": "按攻关方向核定",
+      "sourceOrg": "广州南沙经济技术开发区科学技术局",
+      "contactDept": "南沙区科技局",
+      "fundType": "无偿补助",
+      "basisDoc": "《2025年南沙区船舶与海洋工程装备产业科技攻关项目申报指南》",
+      "applicationProcess": "企业申报\n区科技局初审\n专家评审\n立项支持",
+      "keyPoints": "南沙区聚焦船舶海工装备的区级专项，服务南沙海洋装备产业集群。",
+      "tags": [
+        "南沙",
+        "船舶海工",
+        "区级专项"
+      ],
+      "id": 7
+    },
+    {
+      "name": "广东省自然科学基金（海洋领域）",
+      "category": "基金类",
+      "sourceLevel": "provincial",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "支持海洋科学基础研究与前沿探索，含面上项目、区域联合基金等类型。",
+      "amountRange": "面上项目10-30万/项",
+      "sourceOrg": "广东省科学技术厅 / 省基金委",
+      "contactDept": "广东省基础与应用基础研究基金管理委员会",
+      "fundType": "基础研究资助",
+      "basisDoc": "《广东省自然科学基金项目申报指南》",
+      "applicationProcess": "系统申报\n依托单位审核\n同行评议\n立项资助",
+      "keyPoints": "中山大学海洋科学学院等机构2026年度获批省基金项目5项，海洋基础研究持续受支持。",
+      "tags": [
+        "自然科学基金",
+        "基础研究",
+        "海洋科学"
+      ],
+      "id": 8
+    },
+    {
+      "name": "海洋灾害预警与防护广东省重点实验室开放基金",
+      "category": "基金类",
+      "sourceLevel": "provincial",
+      "status": "open",
+      "isHot": false,
+      "supportDirection": "面向海洋灾害预警与防护方向的开放课题，支持实验室外部科研人员申报。",
+      "amountRange": "开放课题3-10万/项",
+      "sourceOrg": "汕头大学 · 广东省重点实验室",
+      "contactDept": "海洋灾害预警与防护广东省重点实验室",
+      "fundType": "开放基金",
+      "basisDoc": "《海洋灾害预警与防护广东省重点实验室开放基金课题申请指南》",
+      "applicationProcess": "提交申请书\n实验室评审\n立项公示\n签订任务书",
+      "keyPoints": "开放基金面向全国，聚焦海洋灾害监测、预警、防护技术。",
+      "tags": [
+        "重点实验室",
+        "开放基金",
+        "海洋灾害"
+      ],
+      "id": 9
+    },
+    {
+      "name": "广东省海洋新兴产业投资基金",
+      "category": "基金类",
+      "sourceLevel": "provincial",
+      "status": "ongoing",
+      "isHot": true,
+      "supportDirection": "由广东战新引导基金发起，面向海洋新兴产业股权投资，正在招募管理人（GP）。",
+      "amountRange": "引导基金出资规模待定",
+      "sourceOrg": "广东省战新产业引导基金",
+      "contactDept": "基金管理人（GP）遴选机构",
+      "fundType": "股权投资",
+      "basisDoc": "《海洋新兴产业投资基金招募管理人公告》",
+      "applicationProcess": "提交GP申报材料\n遴选评审\n设立基金\n项目投资",
+      "keyPoints": "广东首只专注海洋新兴产业的省级引导基金，为海洋科技企业提供股权融资通道。",
+      "tags": [
+        "产业基金",
+        "股权投资",
+        "GP遴选"
+      ],
+      "id": 10
+    },
+    {
+      "name": "广州海洋经济产业基金",
+      "category": "基金类",
+      "sourceLevel": "city",
+      "status": "ongoing",
+      "isHot": true,
+      "supportDirection": "广州市发行10亿规模海洋经济产业基金，重点投向海洋高端装备、海洋生物医药等赛道。",
+      "amountRange": "10亿元规模",
+      "sourceOrg": "广州市政府引导基金",
+      "contactDept": "广州市金融局 / 基金管理人",
+      "fundType": "股权投资",
+      "basisDoc": "广州市海洋经济产业基金设立方案",
+      "applicationProcess": "项目对接\n尽调评估\n投决会\n出资",
+      "keyPoints": "广州海洋产业股权融资的重要工具，配套海洋金融二十条落地。",
+      "tags": [
+        "广州",
+        "产业基金",
+        "10亿规模"
+      ],
+      "id": 11
+    },
+    {
+      "name": "广东海洋牧场产业基金",
+      "category": "基金类",
+      "sourceLevel": "provincial",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "广东省首只海洋牧场产业基金，已对水产企业完成9500万元增资，支持海洋牧场全产业链。",
+      "amountRange": "首期已投9500万元",
+      "sourceOrg": "广东省海洋牧场产业基金",
+      "contactDept": "基金管理人",
+      "fundType": "股权投资",
+      "basisDoc": "海洋牧场产业基金投资公告",
+      "applicationProcess": "产业链企业筛选\n尽调\n增资扩股\n投后管理",
+      "keyPoints": "聚焦海洋牧场（深远海养殖）赛道，标志广东海洋牧场金融工具落地。",
+      "tags": [
+        "海洋牧场",
+        "产业基金",
+        "增资扩股"
+      ],
+      "id": 12
+    },
+    {
+      "name": "广东「海洋金融二十条」",
+      "category": "国债类",
+      "sourceLevel": "provincial",
+      "status": "ongoing",
+      "isHot": true,
+      "supportDirection": "加快发展蓝色金融产业，支持涉海企业在境内外上市融资，设立海洋科创专项贷款。",
+      "amountRange": "政策工具（含专项贷款额度）",
+      "sourceOrg": "广东省地方金融监督管理局",
+      "contactDept": "广东省地方金融监督管理局",
+      "fundType": "上市培育 / 专项贷款",
+      "basisDoc": "《广东省加快发展蓝色金融产业若干措施》（海洋金融二十条）",
+      "applicationProcess": "涉海企业上市培育库申报\n银行专项贷款对接\n上市辅导支持",
+      "keyPoints": "强化涉海企业上市培育，为海洋企业打通股权融资+信贷融资双通道。",
+      "tags": [
+        "蓝色金融",
+        "上市培育",
+        "专项贷款"
+      ],
+      "id": 13
+    },
+    {
+      "name": "广东省推动海洋经济高质量发展行动方案（2025-2027）",
+      "category": "国债类",
+      "sourceLevel": "provincial",
+      "status": "ongoing",
+      "isHot": true,
+      "supportDirection": "省级海洋经济三年行动方案，统筹重大项目、基础设施与产业布局，配套资金要素保障。",
+      "amountRange": "方案级（配套多类资金）",
+      "sourceOrg": "中共广东省委办公厅 / 省政府办公厅",
+      "contactDept": "广东省海洋主管部门",
+      "fundType": "综合政策资金",
+      "basisDoc": "《广东省推动海洋经济高质量发展行动方案（2025—2027年）》",
+      "applicationProcess": "项目纳入省重点项目库\n争取国家/省级资金\n逐级上报实施",
+      "keyPoints": "2026年1月30日印发，是广东海洋经济顶层设计，重大项目资金争取的核心依据。",
+      "tags": [
+        "行动方案",
+        "顶层设计",
+        "重点项目"
+      ],
+      "id": 14
+    },
+    {
+      "name": "广州金控布局海洋产业新赛道（深海科技）",
+      "category": "基金类",
+      "sourceLevel": "social",
+      "status": "ongoing",
+      "isHot": true,
+      "supportDirection": "广州金控集团推进深海科技产学研投融合，布局海洋产业新赛道股权投资。",
+      "amountRange": "集团产业投资布局",
+      "sourceOrg": "广州金融控股集团",
+      "contactDept": "广州金控投资部门",
+      "fundType": "股权投资",
+      "basisDoc": "东方财富网报道《深海科技产学研投融合提速，广州金控布局海洋产业新赛道》",
+      "applicationProcess": "项目对接广州金控\n产业尽调\n战略投资",
+      "keyPoints": "地方金控平台进场海洋科技，标志深海科技赛道获国资资本关注。",
+      "tags": [
+        "广州金控",
+        "深海科技",
+        "战略投资"
+      ],
+      "id": 15
+    },
+    {
+      "name": "国联水产携手国资基金，国美水产增资扩股",
+      "category": "基金类",
+      "sourceLevel": "social",
+      "status": "closed",
+      "isHot": false,
+      "supportDirection": "国联水产引入国资基金对子公司国美水产增资扩股，推动海洋食品深加工。",
+      "amountRange": "增资扩股（国资基金）",
+      "sourceOrg": "国联水产 / 国资基金",
+      "contactDept": "国联水产董事会",
+      "fundType": "股权投资",
+      "basisDoc": "中金在线报道《国联水产携手国资基金注入新动能》",
+      "applicationProcess": "增资扩股协议\n国资基金出资\n工商变更",
+      "keyPoints": "海洋食品深加工企业获国资基金加持，产业链资本化加速。",
+      "tags": [
+        "国联水产",
+        "增资扩股",
+        "国资基金"
+      ],
+      "id": 16
+    },
+    {
+      "name": "粤港澳海洋产业基金（专家呼吁设立）",
+      "category": "基金类",
+      "sourceLevel": "cross_region",
+      "status": "upcoming",
+      "isHot": false,
+      "supportDirection": "专家呼吁粤港澳三地联合设立海洋产业基金，推动大湾区海洋经济协同投资。",
+      "amountRange": "拟设立（规模待定）",
+      "sourceOrg": "粤港澳大湾区（建议）",
+      "contactDept": "待定",
+      "fundType": "股权投资",
+      "basisDoc": "今日头条《海洋竞争升维！专家呼吁粤港澳成立产业基金》",
+      "applicationProcess": "政策研究\n三地协商\n基金设立",
+      "keyPoints": "跨区域海洋产业基金仍处倡议阶段，是未来大湾区海洋投资的重要方向。",
+      "tags": [
+        "粤港澳",
+        "跨区域基金",
+        "倡议阶段"
+      ],
+      "id": 17
+    },
+    {
+      "name": "关于组织申请2026年度省海洋经济发展资金的通知",
+      "category": "专项资金类",
+      "sourceLevel": "provincial",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "2025年8月19日&nbsp;-&nbsp;为深入贯彻落实省委 **** 具体部署和全省海洋经济工作会议精神,培育壮大海洋战略性**产业,根据《海上系列产业发展资金 补改投 实施方案(试行)》(粤自...",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "待核实",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "关于组织申请2026年度省海洋经济发展资金的通知",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 18
+    },
+    {
+      "name": "广东省自然资源厅征集2026年度省海上系列产业发展资金 补改投 项目",
+      "category": "专项资金类",
+      "sourceLevel": "provincial",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "2025年12月5日&nbsp;-&nbsp;广东省自然资源厅网站由广东省自然资源厅主办,广东省国土资源技术中心承办。 首页新闻动态政务公开政务服务互动交流专题专栏当前位置: 首页 政务公开 ...",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "广东省自然资源厅",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "广东省自然资源厅征集2026年度省海上系列产业发展资金 补改投 项目",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 19
+    },
+    {
+      "name": "专项资金_广东省自然资源厅",
+      "category": "专项资金类",
+      "sourceLevel": "provincial",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "2026年4月3日&nbsp;-&nbsp;二、项目名称:海洋经济发展管理经费(子项3:2026年海洋经济与产业发展服务).广东省城乡规划设计研究院科技集团股份有限公司(联合体成员:深圳中梦数字科...",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "广东省自然资源厅",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "专项资金_广东省自然资源厅",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 20
+    },
+    {
+      "name": "关于组织申报2026年 冲补强 省财政专项资金项目(重大成果培育)的通知-广东海洋大学科学技术部",
+      "category": "专项资金类",
+      "sourceLevel": "provincial",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "根据《广东省省级财政专项资金管理办法(试行)》(粤府〔2018〕120号)及省、市关于规范省海洋经济发展(海洋六大产业)专项资金项目验收工作的有关要求,现将完成验收的广东省海...",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "科学技术部",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "关于组织申报2026年 冲补强 省财政专项资金项目(重大成果培育)的通知-广东海洋大学科学技术部",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 21
+    },
+    {
+      "name": "深圳市海洋发展局关于发布2026年深圳市农业发展专项资金(渔业类)第一批项目申报指南的通知 - 铁耙云",
+      "category": "专项资金类",
+      "sourceLevel": "provincial",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "详见申报指南",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "待核实",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "深圳市海洋发展局关于发布2026年深圳市农业发展专项资金(渔业类)第一批项目申报指南的通知 - 铁耙云",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 22
+    },
+    {
+      "name": "关于转发2024年省自然资源厅海洋六大产业专项项目申报指南的通知-广东海洋大学科学技术部",
+      "category": "专项资金类",
+      "sourceLevel": "provincial",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "详见申报指南",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "科学技术部",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "关于转发2024年省自然资源厅海洋六大产业专项项目申报指南的通知-广东海洋大学科学技术部",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 23
+    },
+    {
+      "name": "广东省自然资源厅关于印发2021年省级促进经济高质量发展专项(海洋经济发展)海洋六大产业项目申报指南的通知_广东省自然资源厅",
+      "category": "专项资金类",
+      "sourceLevel": "provincial",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "详见申报指南",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "广东省自然资源厅",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "广东省自然资源厅关于印发2021年省级促进经济高质量发展专项(海洋经济发展)海洋六大产业项目申报指南的通知_广东省自然资源厅",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 24
+    },
+    {
+      "name": "2024年海洋经济发展(海洋六大产业)专项项目申报指南 - 道客巴巴",
+      "category": "专项资金类",
+      "sourceLevel": "provincial",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "详见申报指南",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "待核实",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "2024年海洋经济发展(海洋六大产业)专项项目申报指南 - 道客巴巴",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 25
+    },
+    {
+      "name": "促进经济高质量发展(海洋经济发展)海洋六大产业专项项目申报指南的通知_tzgg",
+      "category": "专项资金类",
+      "sourceLevel": "provincial",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "详见申报指南",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "待核实",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "促进经济高质量发展(海洋经济发展)海洋六大产业专项项目申报指南的通知_tzgg",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 26
+    },
+    {
+      "name": "专项资金项目一览表(支持海洋六大产业发展)|广东启动2020年省级促进经济发展专项资金(海洋战略新兴产业、海洋公共服务)项目申报_专题",
+      "category": "专项资金类",
+      "sourceLevel": "provincial",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "详见申报指南",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "待核实",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "专项资金项目一览表(支持海洋六大产业发展)|广东启动2020年省级促进经济发展专项资金(海洋战略新兴产业、海洋公共服务)项目申报_专题",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 27
+    },
+    {
+      "name": "转发广东省科学技术厅关于组织申报2024年度广东省重点领域研发计划 海洋科技 重大专项旗舰项目的通知",
+      "category": "专项资金类",
+      "sourceLevel": "provincial",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "2024年6月18日&nbsp;-&nbsp;符合申报条件的个人可用账号登录 广东省科技业务管理阳光政务平台() 查看具体指南文件并提交有关材料,必要的技术、财务、知识产权、合作协议、承诺函...",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "广东省科学技术厅",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "转发广东省科学技术厅关于组织申报2024年度广东省重点领域研发计划 海洋科技 重大专项旗舰项目的通知",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 28
+    },
+    {
+      "name": "广东省发布申报 海洋科技 重大专项旗舰项目通知|广东省|旗舰_新浪科技_新浪网",
+      "category": "专项资金类",
+      "sourceLevel": "provincial",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "广东省科学技术厅于2024年5月13日发布《2024年度广东省重点领域研发计划 海洋科技 重大专项旗舰项目申报指南(征求意见稿)》,面向社会公开征求意见。 主要支持方向包括...",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "待核实",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "广东省发布申报 海洋科技 重大专项旗舰项目通知|广东省|旗舰_新浪科技_新浪网",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 29
+    },
+    {
+      "name": "广东省科学技术厅关于组织申报2019～2020年度广东省重点领域研发计划 海洋高端装备制造及资源保护与利用 重点专项项目的通知 广东省科学技术厅",
+      "category": "专项资金类",
+      "sourceLevel": "provincial",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "详见申报指南",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "广东省科学技术厅",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "广东省科学技术厅关于组织申报2019～2020年度广东省重点领域研发计划 海洋高端装备制造及资源保护与利用 重点专项项目的通知 广东省科学技术厅",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 30
+    },
+    {
+      "name": "广东省2024年(海洋经济发展)海洋六大产业专项项目申报时间、条件、资助奖励_政策通知_科泰集团",
+      "category": "专项资金类",
+      "sourceLevel": "provincial",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "详见申报指南",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "待核实",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "广东省2024年(海洋经济发展)海洋六大产业专项项目申报时间、条件、资助奖励_政策通知_科泰集团",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 31
+    },
+    {
+      "name": "广州南沙经济技术开发区科学技术局 广州南沙经济技术开发区人才发展局关于发布2025年南沙区船舶与海洋工程装备产业科技攻关项目申报指南的通知_广州...",
+      "category": "专项资金类",
+      "sourceLevel": "city",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "2025年9月29日&nbsp;-&nbsp;根据《广州市南沙区科技计划项目管理办法》的有关规定,项目采用会议答辩评审方式,按评审结果排序立项。.2.项目完成时须形成船海产业的新产品、新装备,...",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "南沙区",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "广州南沙经济技术开发区科学技术局 广州南沙经济技术开发区人才发展局关于发布2025年南沙区船舶与海洋工程装备产业科技攻关项目申报指南的通知_广州...",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 32
+    },
+    {
+      "name": "项目管理 | 广东省、广州市、珠海市及其他外省市科技计划项目(不含深圳市)的联合申报协议审核流程 | 中山大学海洋科学学院",
+      "category": "专项资金类",
+      "sourceLevel": "city",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "2024年11月1日&nbsp;-&nbsp;为进一步推动科研项目申报工作的规范化、高效化管理,切实提升科研协同创新能力与服务水平,我校科研管理协同创新服务平台已上线 联合申报协议 审核模块...",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "待核实",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "项目管理 | 广东省、广州市、珠海市及其他外省市科技计划项目(不含深圳市)的联合申报协议审核流程 | 中山大学海洋科学学院",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 33
+    },
+    {
+      "name": "广州市南沙区重点领域科技计划项目申报领域、条件、程序、材料_支持_海洋_装备",
+      "category": "专项资金类",
+      "sourceLevel": "city",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "2023年4月15日&nbsp;-&nbsp;4月15日,广州市科学技术局发布2024年度广州市科技计划项目申报指南.结合此前市科技局印发的《广州市重点领域研发计划优化提升方案》,鼓励在穗企业和医...",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "南沙区",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "广州市南沙区重点领域科技计划项目申报领域、条件、程序、材料_支持_海洋_装备",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 34
+    },
+    {
+      "name": "2024年度广州市科技计划项目申报指南发布_腾讯新闻",
+      "category": "专项资金类",
+      "sourceLevel": "city",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "为全面贯彻落实党的二十大精神和习近平总书记关于加强关键核心技术攻关的重要论述精神,按照省委、省政府关于科技创新的相关部署,根据《广东省重点领域研发计划 十四五 行动...",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "待核实",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "2024年度广州市科技计划项目申报指南发布_腾讯新闻",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 35
+    },
+    {
+      "name": "广东省科学技术厅关于组织申报2024年度广东省重点领域研发计划“海洋科技”重大专项旗舰项目的通知 | 宏创为集团",
+      "category": "专项资金类",
+      "sourceLevel": "city",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "详见申报指南",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "广东省科学技术厅",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "广东省科学技术厅关于组织申报2024年度广东省重点领域研发计划“海洋科技”重大专项旗舰项目的通知 | 宏创为集团",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 36
+    },
+    {
+      "name": "关于申报2024年度广东省重点领域研发计划 海洋科技 重大专项旗舰项目的通知 | 香港中文大学(深圳)",
+      "category": "专项资金类",
+      "sourceLevel": "city",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "详见申报指南",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "待核实",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "关于申报2024年度广东省重点领域研发计划 海洋科技 重大专项旗舰项目的通知 | 香港中文大学(深圳)",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 37
+    },
+    {
+      "name": "国家重点研发计划 海洋农业与淡水渔业科技创新 专项陆基工厂项目...",
+      "category": "专项资金类",
+      "sourceLevel": "national",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "国家重点研发计划 海洋农业与淡水渔业科技创新 专项中, 陆基工厂化养殖关键技术与智能化装备 项目已多次启动推进,核心进展如下: 一、项目启动与推进历程 2024年3月:项目...",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "待核实",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "国家重点研发计划 海洋农业与淡水渔业科技创新 专项陆基工厂项目...",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 38
+    },
+    {
+      "name": "国家重点研发计划 海洋农业与淡水渔业科技创新 专项项目 陆基工厂化养殖关键技术与智能化装备 2026年度工作推进会在烟台莱州市召开|水产|黄海|烟台市|...",
+      "category": "专项资金类",
+      "sourceLevel": "national",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "2026年2月12日&nbsp;-&nbsp;1月17日,中国水产科学研究院黄海水产研究所曲克明研究员主持的国家重点研发计划 海洋农业与淡水渔业科技创新 专项项目 陆基工厂化养殖关键技术与智能...",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "待核实",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "国家重点研发计划 海洋农业与淡水渔业科技创新 专项项目 陆基工厂化养殖关键技术与智能化装备 2026年度工作推进会在烟台莱州市召开|水产|黄海|烟台市|...",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 39
+    },
+    {
+      "name": "张偲院士等担任项目指导专家!国家重点研发计划 工程科学与综合交叉 重点专项 海洋荒漠生态系统演化与增汇工程策略 项目启动_王为磊_地球化学",
+      "category": "专项资金类",
+      "sourceLevel": "national",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "中国科学院南海海洋研究所重点研究热带边缘海海洋水圈-地圈-生物圈圈层结构及其相互作用特征与演变规律,探讨其对资源形成和环境变化的控制和影响,发展具有南海特色的热带海...",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "待核实",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "张偲院士等担任项目指导专家!国家重点研发计划 工程科学与综合交叉 重点专项 海洋荒漠生态系统演化与增汇工程策略 项目启动_王为磊_地球化学",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 40
+    },
+    {
+      "name": "国家自然科学基金2026年度地球科学部(涉海)重点资助领域及方向!_指南_项目_海洋",
+      "category": "专项资金类",
+      "sourceLevel": "national",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "详见申报指南",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "国家自然科学基金",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "国家自然科学基金2026年度地球科学部(涉海)重点资助领域及方向!_指南_项目_海洋",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 41
+    },
+    {
+      "name": "广东省自然科学基金管理办法-广东海洋大学科学技术部",
+      "category": "基金类",
+      "sourceLevel": "provincial",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "2026年8月18日&nbsp;-&nbsp;本研究由广东省自然科学基金、国家自然科学基金、广东省现代化海洋牧场适养品种核心技术攻关项目等共同资助完成.中国科学院南海海洋研究所硕士生黄佳...",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "科学技术部",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "广东省自然科学基金管理办法-广东海洋大学科学技术部",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 42
+    },
+    {
+      "name": "关于组织申报2022年度广东省自然科学基金项目的通知-广东海洋大学商学院",
+      "category": "基金类",
+      "sourceLevel": "provincial",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "2026年8月3日&nbsp;-&nbsp;本研究由广东省自然科学基金、国家自然科学基金、广东省现代化海洋牧场适养品种核心技术攻关项目等共同资助完成.该研究得到科技部重点研发计划、国家...",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "待核实",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "关于组织申报2022年度广东省自然科学基金项目的通知-广东海洋大学商学院",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 43
+    },
+    {
+      "name": "多项涉海!2019年广东省自然科学基金(结转类)项目公示表_单位",
+      "category": "基金类",
+      "sourceLevel": "provincial",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "详见申报指南",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "待核实",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "多项涉海!2019年广东省自然科学基金(结转类)项目公示表_单位",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 44
+    },
+    {
+      "name": "我校今年喜获两项国家自然科学基金-广东海洋大学",
+      "category": "基金类",
+      "sourceLevel": "provincial",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "详见申报指南",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "国家自然科学基金",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "我校今年喜获两项国家自然科学基金-广东海洋大学",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 45
+    },
+    {
+      "name": "科创ING | 广州将发行10亿规模海洋经济产业基金",
+      "category": "基金类",
+      "sourceLevel": "city",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "2025年7月15日&nbsp;-&nbsp;国联水产(300094)股吧,股民朋友可以在这里畅所欲言,分析讨论股票名的最新动态。国联水产股吧,专业的股票论坛社区。 公告日期:2025-07-16 证券代码:300...",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "待核实",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "科创ING | 广州将发行10亿规模海洋经济产业基金",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 46
+    },
+    {
+      "name": "国联水产携手国资基金注入新动能:国美水产增资扩股,引领海洋食品深加工新纪元_手机中金在线",
+      "category": "基金类",
+      "sourceLevel": "city",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "2026年8月6日&nbsp;-&nbsp;广东战新引导基金拟设立的海洋新兴产业投资基金招GP,基金重点支持海洋高端装备、海洋新材料、海洋电子信息等海洋新兴产业,推动全省海洋经济从规模优势...",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "待核实",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "国联水产携手国资基金注入新动能:国美水产增资扩股,引领海洋食品深加工新纪元_手机中金在线",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 47
+    },
+    {
+      "name": "广东战新引导基金拟设立的海洋新兴产业投资基金招GP_投资界",
+      "category": "基金类",
+      "sourceLevel": "city",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "详见申报指南",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "待核实",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "广东战新引导基金拟设立的海洋新兴产业投资基金招GP_投资界",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 48
+    },
+    {
+      "name": "国联水产拟参与投资设立海洋产业基金",
+      "category": "基金类",
+      "sourceLevel": "city",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "详见申报指南",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "待核实",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "国联水产拟参与投资设立海洋产业基金",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 49
+    },
+    {
+      "name": "强化涉海企业上市培育!广东 海洋金融二十条 来了_中国财富网",
+      "category": "基金类",
+      "sourceLevel": "social",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "广东发布的 海洋金融二十条 从多维度强化涉海企业上市培育工作,具体措施包括: 强化上市培育机制:明确提出 强化涉海企业上市培育 ,鼓励龙头上市公司通过再融资、并购重组带...",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "待核实",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "强化涉海企业上市培育!广东 海洋金融二十条 来了_中国财富网",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 50
+    },
+    {
+      "name": "广东:加快发展蓝色金融产业 支持涉海企业在境内外上市融资|航运|船舶_网易订阅",
+      "category": "基金类",
+      "sourceLevel": "social",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "详见申报指南",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "待核实",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "广东:加快发展蓝色金融产业 支持涉海企业在境内外上市融资|航运|船舶_网易订阅",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 51
+    },
+    {
+      "name": "广东发布海洋金融二十条,强化涉海企业上市培育工作",
+      "category": "基金类",
+      "sourceLevel": "social",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "详见申报指南",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "待核实",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "广东发布海洋金融二十条,强化涉海企业上市培育工作",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 52
+    },
+    {
+      "name": "广东 海洋金融二十条 来了!支持设立 海洋科创专项贷款 |广东|海洋金融|涉海|科创|融资|贷款_手机网易网",
+      "category": "基金类",
+      "sourceLevel": "social",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "详见申报指南",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "待核实",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "广东 海洋金融二十条 来了!支持设立 海洋科创专项贷款 |广东|海洋金融|涉海|科创|融资|贷款_手机网易网",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 53
+    },
+    {
+      "name": "中信银行助力搭建海洋企业投融资 高速路",
+      "category": "基金类",
+      "sourceLevel": "social",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "2025年9月19日&nbsp;-&nbsp;股东信息显示,该公司由山东海洋集团有限公司全资持股。.36氪获悉,爱企查App显示,近日,山东海洋能源有限公司发生工商变更,注册资本由5亿元人民币增至10...",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "待核实",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "中信银行助力搭建海洋企业投融资 高速路",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 54
+    },
+    {
+      "name": "涉海企业IPO融资260亿 资本市场为海洋经济注入新动能_中金在线财经号",
+      "category": "基金类",
+      "sourceLevel": "social",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "详见申报指南",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "待核实",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "涉海企业IPO融资260亿 资本市场为海洋经济注入新动能_中金在线财经号",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 55
+    },
+    {
+      "name": "2818--2024年广东省政府专项债券(二十期)--台山市海洋牧场基础设施建设项目--募投报告 - 道客巴巴",
+      "category": "国债类",
+      "sourceLevel": "provincial",
+      "status": "ongoing",
+      "isHot": false,
+      "supportDirection": "详见申报指南",
+      "amountRange": "详见申报指南",
+      "sourceOrg": "待核实",
+      "contactDept": "详见申报指南",
+      "fundType": "待核实",
+      "basisDoc": "2818--2024年广东省政府专项债券(二十期)--台山市海洋牧场基础设施建设项目--募投报告 - 道客巴巴",
+      "applicationProcess": "详见申报指南\n提交申报材料\n主管部门审核\n立项拨付",
+      "keyPoints": "自动采集条目，待人工补全关键要点。",
+      "tags": [
+        "自动采集"
+      ],
+      "auto": true,
+      "id": 56
+    }
+  ]
+}
