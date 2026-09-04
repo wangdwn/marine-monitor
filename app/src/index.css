@@ -4,34 +4,79 @@
 
 @layer base {
   :root {
-    --background: 220 12% 96%;
-    --foreground: 220 14% 10%;
+    /* —— Ocean Series daylight-sea (fallbacks if tokens.css is unavailable) —— */
+    --pan-a: #3b82f6;
+    --pan-b: #0d9488;
+    --pan-c: #d97706;
+    --pan-d: #dc2626;
+    --bg: #f8fafc;
+    --bg-subtle: #f1f5f9;
+    --fg: #0f172a;
+    --fg-secondary: #334155;
+    --faint: #94a3b8;
+    --nav-h: 56px;
+    --os-primary: #1e3a8a;
+    --os-card: #ffffff;
+    --os-border: #e2e8f0;
+    --os-muted: #64748b;
+    --os-accent: #0d6b7d;
+
+    /*
+     * shadcn HSL channels, aligned to daylight-sea hex:
+     * primary #1e3a8a · accent/pan-b #0d9488 · surfaces #f8fafc / #fff
+     * text #0f172a · muted #64748b · border #e2e8f0
+     *
+     * These override same-named hex vars from tokens.css so Tailwind
+     * `hsl(var(--primary))` keeps working. Hex copies used by nav.css
+     * are restored on `.os-nav` below.
+     */
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
     --card: 0 0% 100%;
-    --card-foreground: 220 14% 10%;
+    --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
-    --popover-foreground: 220 14% 10%;
-    --primary: 210 52% 23%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 224 64% 33%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 210 20% 90%;
-    --secondary-foreground: 220 14% 10%;
-    --muted: 210 20% 90%;
-    --muted-foreground: 218 10% 45%;
-    --accent: 194 55% 39%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 175 84% 32%;
     --accent-foreground: 0 0% 100%;
-    --destructive: 0 55% 49%;
+    --destructive: 0 74% 42%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 10% 88%;
-    --input: 220 10% 88%;
-    --ring: 210 52% 23%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 224 64% 33%;
     --radius: 0.5rem;
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 220 14% 10%;
-    --sidebar-primary: 210 52% 23%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 175 84% 32%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 20% 94%;
-    --sidebar-accent-foreground: 220 14% 10%;
-    --sidebar-border: 220 10% 88%;
-    --sidebar-ring: 210 52% 23%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 175 84% 32%;
+  }
+
+  /* nav.css expects hex colors; re-bind on the series nav subtree */
+  .os-nav {
+    --primary: #1e3a8a;
+    --primary-hover: #1e40af;
+    --card: #ffffff;
+    --border: #e2e8f0;
+    --muted: #64748b;
+    --fg: #0f172a;
+    --accent: #0d6b7d;
+    --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+    --font-sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", -apple-system,
+      BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  /* Full-width chrome above the dashboard + sidebar */
+  .os-nav__inner {
+    max-width: none;
   }
 
   html {
@@ -39,14 +84,16 @@
   }
 
   body {
-    @apply bg-[#F0F2F5] text-[#1A1D21] antialiased;
-    font-family: "Noto Sans SC", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+    @apply antialiased;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans, "Noto Sans SC", "PingFang SC", "Helvetica Neue", Arial, sans-serif);
     font-size: 14px;
     line-height: 1.7;
   }
 
   * {
-    @apply border-[#E2E5EA];
+    @apply border-border;
   }
 }
 
@@ -55,10 +102,10 @@
     font-family: "JetBrains Mono", "SF Mono", monospace;
   }
   .shadow-card {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
   }
   .shadow-card-hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.10);
   }
   .glass {
     backdrop-filter: blur(12px);
@@ -66,26 +113,26 @@
     background: rgba(255, 255, 255, 0.85);
   }
   .gradient-primary {
-    background: linear-gradient(135deg, #1B3A5C 0%, #2E7D9A 100%);
+    background: linear-gradient(135deg, var(--os-primary, #1e3a8a) 0%, var(--pan-b) 100%);
   }
   .gradient-success {
-    background: linear-gradient(135deg, #4A8B5C 0%, #3A7A4C 100%);
+    background: linear-gradient(135deg, #166534 0%, #15803d 100%);
   }
   .gradient-warning {
-    background: linear-gradient(135deg, #D4823D 0%, #C07030 100%);
+    background: linear-gradient(135deg, #d97706 0%, #92400e 100%);
   }
   .gradient-danger {
-    background: linear-gradient(135deg, #B54848 0%, #9A3838 100%);
+    background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
   }
   .text-gradient {
-    background: linear-gradient(135deg, #1B3A5C 0%, #2E7D9A 100%);
+    background: linear-gradient(135deg, var(--os-primary, #1e3a8a) 0%, var(--pan-b) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   .divider-v {
-    border-right: 1px solid #E2E5EA;
+    border-right: 1px solid var(--os-border, #e2e8f0);
   }
   .divider-h {
-    border-bottom: 1px solid #E2E5EA;
+    border-bottom: 1px solid var(--os-border, #e2e8f0);
   }
 }
