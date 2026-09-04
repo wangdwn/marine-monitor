@@ -3,7 +3,6 @@ import { useAuth } from "@/hooks/useAuth";
 import {
   LayoutDashboard,
   MapPin,
-  FileText,
   ScrollText,
   UserCircle,
   Shield,
@@ -21,6 +20,7 @@ import {
   BarChart3,
 } from "lucide-react";
 import { useState, useEffect } from "react";
+import OceanSeriesNav from "./OceanSeriesNav";
 
 // 导航项定义，包含所需最低权限级别
 // 整合方案（三盘一底座·经营盘）：栏目重组为 政策口径 / 产业数据 / 深度分析 / 招标雷达 / 安全预警
@@ -71,148 +71,160 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const isAdmin = user?.role === "admin";
 
   return (
-    <div className="min-h-screen bg-[#F0F2F5] flex">
-      {/* Mobile overlay */}
-      {mobileOpen && (
-        <div className="fixed inset-0 bg-black/20 z-40 lg:hidden" onClick={() => setMobileOpen(false)} />
-      )}
+    <div className="min-h-screen bg-[var(--bg)] flex flex-col">
+      <OceanSeriesNav />
 
-      {/* Sidebar */}
-      <aside
-        className={`fixed lg:sticky top-0 left-0 z-50 h-screen bg-white border-r border-[#E2E5EA] transition-all duration-300 ${
-          sidebarOpen ? "w-64" : "w-20"
-        } ${mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
-      >
-        {/* Logo */}
-        <div className="h-20 flex items-center px-6 border-b border-[#E2E5EA]">
-          <Link to="/" className="flex items-center gap-3 min-w-0">
-            <div className="w-10 h-10 rounded-lg gradient-primary flex items-center justify-center flex-shrink-0">
-              <Compass className="w-5 h-5 text-white" />
-            </div>
-            {sidebarOpen && (
-              <div className="min-w-0">
-                <p className="text-sm font-semibold text-[#1B3A5C] truncate leading-tight">海洋经济监测</p>
-                <p className="text-[10px] text-[#6B7280] truncate">广州市规划和自然资源局</p>
-              </div>
-            )}
-          </Link>
-        </div>
+      <div className="flex flex-1 min-h-0">
+        {/* Mobile overlay — starts below series nav so A/B/C/D stay reachable */}
+        {mobileOpen && (
+          <div
+            className="fixed left-0 right-0 bottom-0 bg-black/20 z-40 lg:hidden"
+            style={{ top: "var(--nav-h)" }}
+            onClick={() => setMobileOpen(false)}
+          />
+        )}
 
-        {/* Toggle */}
-        <button
-          onClick={() => setSidebarOpen(!sidebarOpen)}
-          className="hidden lg:flex absolute -right-3 top-24 w-6 h-6 bg-white border border-[#E2E5EA] rounded-full items-center justify-center shadow-sm hover:shadow-md transition-shadow z-10"
+        {/* Sidebar */}
+        <aside
+          className={`fixed lg:sticky left-0 z-50 bg-[var(--os-card)] border-r border-[var(--os-border)] transition-all duration-300 ${
+            sidebarOpen ? "w-64" : "w-20"
+          } ${mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
+          style={{ top: "var(--nav-h)", height: "calc(100vh - var(--nav-h))" }}
         >
-          <span className="text-xs text-[#6B7280]">{sidebarOpen ? "<" : ">"}</span>
-        </button>
-
-        {/* Nav */}
-        <nav className="p-3 space-y-0.5">
-          {navGroups.map((grp) => {
-            const items = grp.items.filter((item) => (item.minLevel ?? 0) <= (roleLevel ?? 0));
-            if (items.length === 0) return null;
-            return (
-              <div key={grp.group}>
-                {sidebarOpen && (
-                  <div className="px-3 pt-3 pb-1 text-[10px] font-semibold uppercase tracking-wider text-[#9CA3AF]">
-                    {grp.group}
-                  </div>
-                )}
-                {items.map((item) => {
-                  const isActive = !item.external && location.pathname === item.path;
-                  const Icon = item.icon;
-                  const cls = `flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 group ${
-                    isActive
-                      ? "bg-[#1B3A5C]/8 text-[#1B3A5C] font-medium"
-                      : "text-[#6B7280] hover:bg-[#F0F2F5] hover:text-[#1A1D21]"
-                  }`;
-                  if (item.external) {
-                    return (
-                      <a
-                        key={item.path}
-                        href={item.external}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={cls}
-                        title="外部站点（整合吸收）"
-                      >
-                        <Icon className="w-[18px] h-[18px] flex-shrink-0" />
-                        {sidebarOpen && (
-                          <span className="text-sm truncate flex-1">{item.label}</span>
-                        )}
-                        {sidebarOpen && <span className="text-[10px] text-[#9CA3AF]">↗</span>}
-                      </a>
-                    );
-                  }
-                  return (
-                    <Link key={item.path} to={item.path} className={cls}>
-                      <Icon className={`w-[18px] h-[18px] flex-shrink-0 ${isActive ? "text-[#1B3A5C]" : ""}`} />
-                      {sidebarOpen && (
-                        <span className="text-sm truncate">{item.label}</span>
-                      )}
-                    </Link>
-                  );
-                })}
+          {/* Logo */}
+          <div className="h-20 flex items-center px-6 border-b border-[var(--os-border)]">
+            <Link to="/" className="flex items-center gap-3 min-w-0">
+              <div className="w-10 h-10 rounded-lg gradient-primary flex items-center justify-center flex-shrink-0">
+                <Compass className="w-5 h-5 text-white" />
               </div>
-            );
-          })}
-
-          {isAdmin && (
-            <Link
-              to="/admin"
-              className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 group ${
-                location.pathname === "/admin"
-                  ? "bg-[#1B3A5C]/8 text-[#1B3A5C] font-medium"
-                  : "text-[#6B7280] hover:bg-[#F0F2F5] hover:text-[#1A1D21]"
-              }`}
-            >
-              <Shield className={`w-[18px] h-[18px] flex-shrink-0 ${location.pathname === "/admin" ? "text-[#1B3A5C]" : ""}`} />
-              {sidebarOpen && <span className="text-sm truncate">管理后台</span>}
+              {sidebarOpen && (
+                <div className="min-w-0">
+                  <p className="text-sm font-semibold text-[var(--os-primary)] truncate leading-tight">海洋经济监测</p>
+                  <p className="text-[10px] text-[var(--os-muted)] truncate">B · 经营盘 · 海智数科</p>
+                </div>
+              )}
             </Link>
-          )}
-        </nav>
+          </div>
 
-        {/* Bottom */}
-        <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-[#E2E5EA]">
-          {/* 整合方案：取消登录界面，全站公开访问 */}
-          <div className="flex items-center gap-3 px-1">
-            <div className="w-8 h-8 rounded-full bg-[#1B3A5C]/10 flex items-center justify-center flex-shrink-0">
-              <UserCircle className="w-4 h-4 text-[#1B3A5C]" />
-            </div>
-            {sidebarOpen && (
-              <div className="min-w-0 flex-1">
-                <p className="text-sm font-medium text-[#1A1D21] truncate">公开访问</p>
-                <p className="text-xs text-[#6B7280]">无需登录 · 全栏目开放</p>
-              </div>
+          {/* Toggle */}
+          <button
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+            className="hidden lg:flex absolute -right-3 top-24 w-6 h-6 bg-[var(--os-card)] border border-[var(--os-border)] rounded-full items-center justify-center shadow-sm hover:shadow-md transition-shadow z-10"
+          >
+            <span className="text-xs text-[var(--os-muted)]">{sidebarOpen ? "<" : ">"}</span>
+          </button>
+
+          {/* Nav */}
+          <nav className="p-3 space-y-0.5 overflow-y-auto" style={{ maxHeight: "calc(100% - 9rem)" }}>
+            {navGroups.map((grp) => {
+              const items = grp.items.filter((item) => (item.minLevel ?? 0) <= (roleLevel ?? 0));
+              if (items.length === 0) return null;
+              return (
+                <div key={grp.group}>
+                  {sidebarOpen && (
+                    <div className="px-3 pt-3 pb-1 text-[10px] font-semibold uppercase tracking-wider text-[var(--faint)]">
+                      {grp.group}
+                    </div>
+                  )}
+                  {items.map((item) => {
+                    const isActive = !item.external && location.pathname === item.path;
+                    const Icon = item.icon;
+                    const cls = `flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 group ${
+                      isActive
+                        ? "bg-[color-mix(in_srgb,var(--pan-b)_12%,transparent)] text-[var(--pan-b)] font-medium"
+                        : "text-[var(--os-muted)] hover:bg-[var(--bg)] hover:text-[var(--fg)]"
+                    }`;
+                    if (item.external) {
+                      return (
+                        <a
+                          key={item.path}
+                          href={item.external}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={cls}
+                          title="外部站点（整合吸收）"
+                        >
+                          <Icon className="w-[18px] h-[18px] flex-shrink-0" />
+                          {sidebarOpen && (
+                            <span className="text-sm truncate flex-1">{item.label}</span>
+                          )}
+                          {sidebarOpen && <span className="text-[10px] text-[var(--faint)]">↗</span>}
+                        </a>
+                      );
+                    }
+                    return (
+                      <Link key={item.path} to={item.path} className={cls}>
+                        <Icon className={`w-[18px] h-[18px] flex-shrink-0 ${isActive ? "text-[var(--pan-b)]" : ""}`} />
+                        {sidebarOpen && (
+                          <span className="text-sm truncate">{item.label}</span>
+                        )}
+                      </Link>
+                    );
+                  })}
+                </div>
+              );
+            })}
+
+            {isAdmin && (
+              <Link
+                to="/admin"
+                className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 group ${
+                  location.pathname === "/admin"
+                    ? "bg-[color-mix(in_srgb,var(--pan-b)_12%,transparent)] text-[var(--pan-b)] font-medium"
+                    : "text-[var(--os-muted)] hover:bg-[var(--bg)] hover:text-[var(--fg)]"
+                }`}
+              >
+                <Shield className={`w-[18px] h-[18px] flex-shrink-0 ${location.pathname === "/admin" ? "text-[var(--pan-b)]" : ""}`} />
+                {sidebarOpen && <span className="text-sm truncate">管理后台</span>}
+              </Link>
             )}
-          </div>
-        </div>
-      </aside>
+          </nav>
 
-      {/* Main */}
-      <div className="flex-1 min-w-0">
-        {/* Top bar */}
-        <header className="sticky top-0 z-30 h-16 bg-white/85 backdrop-blur-xl border-b border-[#E2E5EA] flex items-center justify-between px-6">
-          <div className="flex items-center gap-4">
-            <button onClick={() => setMobileOpen(true)} className="lg:hidden p-2 rounded-lg hover:bg-[#F0F2F5]">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" /></svg>
-            </button>
-            <div className="hidden sm:flex items-center gap-2 text-xs text-[#6B7280]">
-              <span>广州市规划和自然资源局</span>
-              <span>/</span>
-              <span className="text-[#1B3A5C] font-medium">
-                {visibleNavItems.find((n) => n.path === location.pathname)?.label ?? (location.pathname === "/admin" ? "管理后台" : "")}
-              </span>
+          {/* Bottom */}
+          <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-[var(--os-border)] bg-[var(--os-card)]">
+            {/* 整合方案：取消登录界面，全站公开访问 */}
+            <div className="flex items-center gap-3 px-1">
+              <div className="w-8 h-8 rounded-full bg-[color-mix(in_srgb,var(--pan-b)_12%,transparent)] flex items-center justify-center flex-shrink-0">
+                <UserCircle className="w-4 h-4 text-[var(--pan-b)]" />
+              </div>
+              {sidebarOpen && (
+                <div className="min-w-0 flex-1">
+                  <p className="text-sm font-medium text-[var(--fg)] truncate">公开访问</p>
+                  <p className="text-xs text-[var(--os-muted)]">无需登录 · 全栏目开放</p>
+                </div>
+              )}
             </div>
           </div>
-          <div className="flex items-center gap-3">
-            <button className="relative p-2 rounded-lg hover:bg-[#F0F2F5] transition-colors">
-              <Bell className="w-[18px] h-[18px] text-[#6B7280]" />
-              <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-[#B54848] rounded-full" />
-            </button>
-          </div>
-        </header>
-        <main className="p-6">{children}</main>
+        </aside>
+
+        {/* Main */}
+        <div className="flex-1 min-w-0">
+          {/* In-app top bar — sticks below the series nav */}
+          <header
+            className="sticky z-30 h-16 bg-white/85 backdrop-blur-xl border-b border-[var(--os-border)] flex items-center justify-between px-6"
+            style={{ top: "var(--nav-h)" }}
+          >
+            <div className="flex items-center gap-4">
+              <button onClick={() => setMobileOpen(true)} className="lg:hidden p-2 rounded-lg hover:bg-[var(--bg)]">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" /></svg>
+              </button>
+              <div className="hidden sm:flex items-center gap-2 text-xs text-[var(--os-muted)]">
+                <span>广州市规划和自然资源局</span>
+                <span>/</span>
+                <span className="text-[var(--pan-b)] font-medium">
+                  {visibleNavItems.find((n) => n.path === location.pathname)?.label ?? (location.pathname === "/admin" ? "管理后台" : "")}
+                </span>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <button className="relative p-2 rounded-lg hover:bg-[var(--bg)] transition-colors">
+                <Bell className="w-[18px] h-[18px] text-[var(--os-muted)]" />
+                <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-[var(--pan-d)] rounded-full" />
+              </button>
+            </div>
+          </header>
+          <main className="p-6">{children}</main>
+        </div>
       </div>
     </div>
   );
