@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-04",
+  "updated_at": "2026-09-19",
   "description": "广东省地质/海洋/测绘相关公开招投标公告（人工核验公开摘要，不虚构记录）",
   "collection_notes": {
     "collected_on": "2026-09-04",
@@ -46,7 +46,8 @@
     "included_source_types": [
       "中国政府采购网公告原文",
       "公开转载的招标公告摘要（字段以页面可见内容为准）"
-    ]
+    ],
+    "last_manual_add": "2026-09-19"
   },
   "notices": [
     {
@@ -300,6 +301,24 @@
       "winner": "",
       "project_code": "",
       "content": "公开转载：项目位于汕尾市南部海域，规划容量 500MW，拟安装 28 台 18MW 级机组。招标人全称在转载页被遮罩，故留空。"
+    },
+    {
+      "notice_id": "nansha-longxue-base-plan-20260911",
+      "title": "南沙区龙穴北临港海洋高端装备制造及综合保障基地项目招标计划",
+      "publish_date": "2026-09-11",
+      "tenderer": "广州南沙临港海洋工程装备有限公司",
+      "agency": "",
+      "source_url": "https://www.tujianzhaobiao.com/news-b627fabef1781b98a95b173cf801436a/",
+      "source": "tujianzhaobiao.com（公开转载；正式交易平台原文〔待核〕）",
+      "notice_type": "招标计划/预告",
+      "chain_position": "midstream",
+      "category": "中游·工程与施工",
+      "region": "广州市",
+      "budget": 0,
+      "win_amount": 0,
+      "winner": "",
+      "project_code": "",
+      "content": "公开转载：项目总投资约71亿元，含船厂、码头、吹砂填土及地基处理等标段；正式招标公告预计约2026年10月发布。预算分项见转载页，未在本条填入以免误读。"
     }
   ]
 }
