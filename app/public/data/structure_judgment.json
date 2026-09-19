@@ -1,6 +1,6 @@
 {
   "schema": "structure_judgment/1.0",
-  "generated_at": "2026-09-19T03:00:57",
+  "generated_at": "2026-09-19T08:18:08",
   "positioning": "监测研判台 ≠ 广海汇撮合黄页。指标均可追溯至 JSON 字段或脚本输出；无数据标〔待核〕。",
   "家底盘": {
     "title": "家底盘",
@@ -28,16 +28,16 @@
         "id": "layer",
         "label": "core / support / peripheral",
         "value": {
-          "core": 1337,
-          "support": 89,
-          "peripheral": 5619
+          "core": 1329,
+          "support": 92,
+          "peripheral": 5624
         },
         "source": "enterprises.json#meta.layer_distribution"
       },
       {
         "id": "sector_pending",
         "label": "待打标剩余",
-        "value": 5753,
+        "value": 5773,
         "unit": "家",
         "source": "enterprises.json#meta.sector_pending_count"
       },
@@ -55,22 +55,22 @@
     "title": "经营盘",
     "notices": {
       "available": true,
-      "source": "geo-ocean-bidding/docs/data/notices.json#notices (updated_at=2026-09-04)",
-      "total": 14,
-      "last_90d_count": 4,
+      "source": "geo-ocean-bidding/docs/data/notices.json#notices (updated_at=2026-09-19)",
+      "total": 15,
+      "last_90d_count": 5,
       "last_90d_budget_wan": 340.0,
       "last_90d_win_wan": null,
-      "with_source_url": 14,
+      "with_source_url": 15,
       "missing_source_url": 0,
       "region_dist": {
-        "广州市": 1,
+        "广州市": 2,
         "阳江市": 1,
         "汕尾市": 2
       },
       "chain_dist": {
         "downstream": 1,
         "upstream": 1,
-        "midstream": 2
+        "midstream": 3
       }
     },
     "funding": {
@@ -124,8 +124,8 @@
   "底座": {
     "title": "口径底座",
     "source_snapshot_at": "2026-08-25",
-    "content_refreshed_at": "2026-09-19",
-    "tag_rules_version": "tag_sector_rules_v1",
+    "content_refreshed_at": "2026-09-04",
+    "tag_rules_version": null,
     "schema": "1.3",
     "source": "广海汇 ghh.gzlpc.gov.cn + 公开上市/工商核验",
     "pending_checklist": [
@@ -136,16 +136,27 @@
       },
       {
         "id": "sector_pending",
-        "label": "产业「待打标」剩余 5753",
+        "label": "产业「待打标」剩余 5773",
         "source": "enterprises.json#meta.sector_pending_count"
       },
       {
         "id": "ghh_live",
         "label": "广海汇 live 回填：云出口当前不可达，需本机快照",
         "source": "data/reports/backfill_ghh_*.json"
+      },
+      {
+        "id": "notices_formal_url",
+        "label": "龙穴北基地正式交易平台原文链接〔待核〕（现为转载页）",
+        "source": "geo-ocean-bidding/docs/data/notices.json#nansha-longxue-base-plan-20260911"
       }
     ],
     "changelog": "data/content_refresh_changelog.json + data/reports/",
-    "vs_ghh": "本站做结构判断与对账；广海汇是产业撮合平台。"
+    "vs_ghh": "本站做结构判断与对账；广海汇是产业撮合平台。",
+    "weekly_latest": {
+      "issue": 14,
+      "url": "https://wangdwn.github.io/marine-weekly/#issue-14",
+      "dateRange": "9月15日—9月19日",
+      "source": "marine-weekly/data/issue-14.json"
+    }
   }
 }
