@@ -33,7 +33,7 @@ const navGroups = [
       { path: "/reports", label: "产业数据", icon: BarChart3, minLevel: 1 },
       { path: "/policies", label: "政策口径", icon: ScrollText, minLevel: 1 },
       { path: "/external-analysis", label: "深度分析", icon: FileBarChart, minLevel: 1, external: "https://wangdwn.github.io/gz-marine-analysis/" },
-      { path: "/external-bidding", label: "招标雷达", icon: Radar, minLevel: 1, external: "https://github.com/wangdwn/geo-ocean-bidding" },
+      { path: "/external-bidding", label: "招标雷达", icon: Radar, minLevel: 1, external: "https://wangdwn.github.io/geo-ocean-bidding/" },
       { path: "/safety", label: "安全预警", icon: ShieldCheck, minLevel: 1 },
     ],
   },
@@ -44,7 +44,7 @@ const navGroups = [
       { path: "/planning", label: "规划保障", icon: ClipboardList, minLevel: 1 },
       { path: "/map", label: "产业地图", icon: MapPin, minLevel: 1 },
       { path: "/collector", label: "数据采集", icon: Terminal, minLevel: 1 },
-      { path: "/funding", label: "基金申报", icon: Wallet, minLevel: 1 },
+      { path: "/funding", label: "专项资金", icon: Wallet, minLevel: 1 },
       { path: "/announce", label: "公告中心", icon: Megaphone, minLevel: 1 },
       { path: "/automation", label: "自动化中心", icon: Activity, minLevel: 1 },
       { path: "/external", label: "全球报告", icon: Globe, minLevel: 2 }, // VIP专属
