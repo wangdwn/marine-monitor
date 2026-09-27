@@ -164,5 +164,20 @@ def main():
     for a in added:
         print(f"  + {a['name'][:50]}")
 
+    # 采集摘要：供 workflow 写 Actions 摘要用（FUNDING_DIFF_OUT 环境变量指定输出路径）
+    diff_out = os.environ.get("FUNDING_DIFF_OUT", "")
+    if diff_out:
+        with open(diff_out, "w", encoding="utf-8") as f:
+            json.dump({
+                "date": date.today().isoformat(),
+                "added_count": len(added),
+                "added": [
+                    {"name": a["name"], "sourceOrg": a.get("sourceOrg", ""),
+                     "category": a.get("category", "")}
+                    for a in added
+                ],
+                "total": len(merged),
+            }, f, ensure_ascii=False, indent=2)
+
 if __name__ == "__main__":
     main()
