@@ -23,6 +23,25 @@ jobs:
 
       - name: 采集资助项目 + 融资动态
         run: python3 collect_funding.py
+        env:
+          FUNDING_DIFF_OUT: ${{ runner.temp }}/funding_diff.json
+
+      - name: 写采集摘要
+        if: always()
+        run: |
+          python3 - <<'EOF'
+          import json, os
+          p = os.path.join(os.environ.get('RUNNER_TEMP', '/tmp'), 'funding_diff.json')
+          try:
+              d = json.load(open(p, encoding='utf-8'))
+          except Exception:
+              d = {"date": "未知", "added_count": 0, "added": [], "total": "?"}
+          lines = [f"## funding 采集摘要（{d.get('date')}）",
+                   f"- 本次新增：{d.get('added_count', 0)} 条；库内共 {d.get('total', '?')} 条"]
+          for a in d.get('added', [])[:20]:
+              lines.append(f"- {a['name']}（{a.get('sourceOrg', '')}）")
+          open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8').write('\n'.join(lines) + '\n')
+          EOF
 
       - name: 有变化才提交
         run: |
