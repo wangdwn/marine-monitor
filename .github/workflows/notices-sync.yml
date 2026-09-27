@@ -56,5 +56,11 @@ jobs:
           git config user.email "bot@users.noreply.github.com"
           git add app/public/data/notices.json
           git commit -m "chore: 自动同步招标库 $(date +%Y-%m-%d)，新增 ${{ steps.sync.outputs.new_count }} 条"
-          git push
+          # 并发推送保护：远端若已移动则 rebase 后重试
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && break
+            echo "推送冲突，10 秒后重试 ($i/3) ..."
+            sleep 10
+          done
+          git log --oneline -1
           echo "已同步并推送，触发 Pages 重部署。"
