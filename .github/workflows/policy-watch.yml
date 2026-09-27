@@ -1,0 +1,62 @@
+name: 海洋政策轻量监测
+
+on:
+  schedule:
+    # 每周三 09:00（北京时间）；UTC 01:00
+    - cron: "0 1 * * 3"
+  workflow_dispatch:  # 手动触发按钮
+
+permissions:
+  contents: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉取仓库
+        uses: actions/checkout@v4
+
+      - name: 装 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 采集政策动态
+        id: watch
+        run: |
+          OUT=$(python3 scripts/policy_watch.py | tee /dev/stderr | grep -o 'STATUS=[a-z_]*' | head -1)
+          echo "status=$OUT" >> $GITHUB_OUTPUT
+        env:
+          BOCHA_API_KEY: ${{ secrets.BOCHA_API_KEY }}
+
+      - name: 写监测摘要
+        if: always()
+        run: |
+          python3 - <<'EOF'
+          import json, os
+          p = 'app/public/data/policy_watch.json'
+          try:
+              d = json.load(open(p, encoding='utf-8'))
+              lines = [f"## 政策监测（{d.get('updated')}，近{d.get('window_days')}天）",
+                       f"- 共 {d.get('count', 0)} 条"]
+              for it in d.get('items', [])[:15]:
+                  lines.append(f"- {it['publish_date']} {it['title']}（{it.get('site','')}）")
+          except Exception:
+              lines = ["## 政策监测", "- 未配置 BOCHA_API_KEY，跳过。",
+                       "- 请在仓库 Settings → Secrets and variables → Actions 添加名为 BOCHA_API_KEY 的 secret。"]
+          open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8').write('\n'.join(lines) + '\n')
+          EOF
+
+      - name: 有变化才提交
+        if: steps.watch.outputs.status == 'STATUS=ok'
+        run: |
+          git config user.name "policy-watch-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add app/public/data/policy_watch.json
+          if git diff --cached --quiet; then
+            echo "数据无变化，跳过提交。"
+          else
+            git commit -m "chore: 政策监测 $(date +%Y-%m-%d)"
+            git push
+            echo "已推送，触发 Pages 重部署。"
+          fi
