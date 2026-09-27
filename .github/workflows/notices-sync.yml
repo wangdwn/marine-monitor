@@ -1,0 +1,60 @@
+name: 招标 notices 自动同步
+
+on:
+  schedule:
+    # 每周一 09:45（北京时间）同步，晚于 geo-ocean-bidding 的 08:00 采集；UTC 01:45
+    - cron: "45 1 * * 1"
+  workflow_dispatch:  # 手动触发按钮
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉取仓库
+        uses: actions/checkout@v4
+
+      - name: 从 geo-ocean-bidding 拉取最新招标库
+        id: sync
+        run: |
+          curl -sSL -o /tmp/notices_src.json \
+            https://raw.githubusercontent.com/wangdwn/geo-ocean-bidding/main/docs/data/notices.json
+          python3 - <<'EOF'
+          import json, os
+          src = json.load(open('/tmp/notices_src.json', encoding='utf-8'))
+          dst = json.load(open('app/public/data/notices.json', encoding='utf-8'))
+          s_items = src if isinstance(src, list) else src.get('notices', [])
+          d_items = dst if isinstance(dst, list) else dst.get('notices', [])
+          s_ids = {i.get('notice_id') for i in s_items}
+          d_ids = {i.get('notice_id') for i in d_items}
+          new_ids = sorted(s_ids - d_ids)
+          # 目标文件以源头为准整体替换（历史同步即按此口径）
+          changed = json.dumps(s_items, sort_keys=True, ensure_ascii=False) != \
+                    json.dumps(d_items, sort_keys=True, ensure_ascii=False)
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write(f"changed={str(changed).lower()}\n")
+              f.write(f"new_count={len(new_ids)}\n")
+          if changed:
+              open('app/public/data/notices.json', 'w', encoding='utf-8').write(
+                  open('/tmp/notices_src.json', encoding='utf-8').read())
+              summ = [f"## 招标库同步（{len(new_ids)} 条新增）"]
+              for i in s_items:
+                  if i.get('notice_id') in new_ids:
+                      summ.append(f"- {i.get('publish_date')} {i.get('title')}")
+              open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8').write('\n'.join(summ) + '\n')
+          else:
+              open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') \
+                  .write('## 招标库同步\n- 源头无变化，跳过。\n')
+          EOF
+
+      - name: 有变化才提交
+        if: steps.sync.outputs.changed == 'true'
+        run: |
+          git config user.name "notices-sync-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add app/public/data/notices.json
+          git commit -m "chore: 自动同步招标库 $(date +%Y-%m-%d)，新增 ${{ steps.sync.outputs.new_count }} 条"
+          git push
+          echo "已同步并推送，触发 Pages 重部署。"
