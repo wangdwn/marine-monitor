@@ -52,6 +52,12 @@ jobs:
             echo "数据无变化，跳过提交。"
           else
             git commit -m "chore: 自动采集 funding 数据 $(date +%Y-%m-%d)"
-            git push
+            # 并发推送保护：远端若已移动则 rebase 后重试
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && break
+            echo "推送冲突，10 秒后重试 ($i/3) ..."
+            sleep 10
+          done
+          git log --oneline -1
             echo "已推送最新 funding 数据，触发 Pages 重部署。"
           fi
