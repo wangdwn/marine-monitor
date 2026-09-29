@@ -38,7 +38,8 @@
       "relatedDimensions": [
         "industry",
         "planning"
-      ]
+      ],
+      "publicUrl": "https://nr.gd.gov.cn/attachment/0/616/616242/4907988.pdf"
     },
     {
       "id": 3,
@@ -58,7 +59,8 @@
       "relatedDimensions": [
         "ecosystem",
         "hub"
-      ]
+      ],
+      "publicUrl": "https://www.nmdis.org.cn/"
     },
     {
       "id": 4,
@@ -78,7 +80,8 @@
       "relatedDimensions": [
         "industry",
         "population"
-      ]
+      ],
+      "publicUrl": "https://www.fao.org/fishery/en/statistics"
     },
     {
       "id": 5,
@@ -98,7 +101,8 @@
       "relatedDimensions": [
         "hub",
         "capital"
-      ]
+      ],
+      "publicUrl": "https://www.sse.net.cn/"
     },
     {
       "id": 6,
@@ -118,7 +122,8 @@
       "relatedDimensions": [
         "ecosystem",
         "hub"
-      ]
+      ],
+      "publicUrl": "https://www.nmc.cn/"
     },
     {
       "id": 7,
@@ -158,7 +163,8 @@
       "relatedDimensions": [
         "industry",
         "energy"
-      ]
+      ],
+      "publicUrl": "https://www.irena.org/"
     },
     {
       "id": 9,
@@ -198,13 +204,44 @@
       "relatedDimensions": [
         "capital",
         "hub"
-      ]
+      ],
+      "publicUrl": "https://data.worldbank.org/"
     }
   ],
   "stats": {
     "total": 10,
     "freeCount": 8,
-    "featuredCount": 3
+    "featuredCount": 3,
+    "byType": [
+      {
+        "reportType": "海洋综合",
+        "count": 3
+      },
+      {
+        "reportType": "海洋监测",
+        "count": 2
+      },
+      {
+        "reportType": "渔业水产",
+        "count": 1
+      },
+      {
+        "reportType": "海运贸易",
+        "count": 1
+      },
+      {
+        "reportType": "海洋气候",
+        "count": 1
+      },
+      {
+        "reportType": "海洋新能源",
+        "count": 1
+      },
+      {
+        "reportType": "宏观经济",
+        "count": 1
+      }
+    ]
   },
   "featured": [
     {
