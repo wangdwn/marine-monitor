@@ -1,31 +1,151 @@
 {
   "summary": {
-    "totalPoints": 156,
-    "completedSurveys": 89,
-    "ongoing": 34,
-    "planned": 33,
-    "categories": [
-      {
-        "name": "海域使用",
-        "count": 45
-      },
-      {
-        "name": "海岛调查",
-        "count": 23
-      },
-      {
-        "name": "海岸线",
-        "count": 32
-      },
-      {
-        "name": "地质环境",
-        "count": 28
-      },
-      {
-        "name": "生态湿地",
-        "count": 28
-      }
-    ],
+    "seaArea": 4520,
+    "seaAreaUnit": "平方公里",
+    "islandCount": 11,
+    "coastlineLength": 157.1,
+    "geologyCoverage": 92.5,
+    "wetlandArea": 792.8,
     "_demo": true
-  }
+  },
+  "categoryData": [
+    {
+      "type": "sea_area",
+      "name": "海域使用",
+      "count": 45
+    },
+    {
+      "type": "island",
+      "name": "海岛调查",
+      "count": 23
+    },
+    {
+      "type": "coastline",
+      "name": "海岸线",
+      "count": 32
+    },
+    {
+      "type": "geology",
+      "name": "地质环境",
+      "count": 28
+    },
+    {
+      "type": "wetland",
+      "name": "生态湿地",
+      "count": 28
+    }
+  ],
+  "detailData": [
+    {
+      "id": 1,
+      "surveyType": "sea_area",
+      "itemName": "海域使用确权登记",
+      "itemValue": 4520,
+      "unit": "平方公里",
+      "status": "completed"
+    },
+    {
+      "id": 2,
+      "surveyType": "island",
+      "itemName": "海岛资源普查",
+      "itemValue": 11,
+      "unit": "个",
+      "status": "completed"
+    },
+    {
+      "id": 3,
+      "surveyType": "coastline",
+      "itemName": "海岸线修测",
+      "itemValue": 157.1,
+      "unit": "公里",
+      "status": "ongoing"
+    },
+    {
+      "id": 4,
+      "surveyType": "geology",
+      "itemName": "1:5万区域地质调查",
+      "itemValue": 92.5,
+      "unit": "%",
+      "status": "ongoing"
+    },
+    {
+      "id": 5,
+      "surveyType": "wetland",
+      "itemName": "滨海湿地本底调查",
+      "itemValue": 792.8,
+      "unit": "公顷",
+      "status": "completed"
+    },
+    {
+      "id": 6,
+      "surveyType": "biodiversity",
+      "itemName": "海洋生物多样性调查",
+      "itemValue": 68,
+      "unit": "站位",
+      "status": "planned"
+    }
+  ],
+  "stations": [
+    {
+      "id": 1,
+      "stationName": "伶仃洋海洋环境站",
+      "status": "active",
+      "stationType": "marine_environment",
+      "region": "南沙",
+      "dataFrequency": "real-time",
+      "latitude": 22.58,
+      "longitude": 113.62
+    },
+    {
+      "id": 2,
+      "stationName": "狮子洋水质监测站",
+      "status": "active",
+      "stationType": "water_quality",
+      "region": "南沙",
+      "dataFrequency": "hourly",
+      "latitude": 22.85,
+      "longitude": 113.58
+    },
+    {
+      "id": 3,
+      "stationName": "大角山地质监测点",
+      "status": "active",
+      "stationType": "geological",
+      "region": "南沙",
+      "dataFrequency": "daily",
+      "latitude": 22.72,
+      "longitude": 113.55
+    },
+    {
+      "id": 4,
+      "stationName": "南沙潮位站",
+      "status": "active",
+      "stationType": "tidal",
+      "region": "南沙",
+      "dataFrequency": "real-time",
+      "latitude": 22.78,
+      "longitude": 113.6
+    },
+    {
+      "id": 5,
+      "stationName": "珠江口气象浮标",
+      "status": "maintenance",
+      "stationType": "meteorological",
+      "region": "珠江口",
+      "dataFrequency": "hourly",
+      "latitude": 22.4,
+      "longitude": 113.8
+    },
+    {
+      "id": 6,
+      "stationName": "红树林生态监测站",
+      "status": "active",
+      "stationType": "ecological",
+      "region": "南沙",
+      "dataFrequency": "weekly",
+      "latitude": 22.65,
+      "longitude": 113.52
+    }
+  ],
+  "_note": "演示数据：页面模板自带口径，无后端数据源"
 }
