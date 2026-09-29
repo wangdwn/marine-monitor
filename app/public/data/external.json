@@ -1,0 +1,273 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "title": "中国海洋经济统计公报",
+      "reportType": "海洋综合",
+      "publisher": "自然资源部",
+      "publishYear": "2026",
+      "accessType": "免费公开",
+      "isFeatured": true,
+      "updateFrequency": "年度",
+      "summary": "自然资源部每年发布的全国海洋经济运行官方统计，含海洋生产总值、增速、三次产业结构、主要海洋产业增加值等核心指标，是涉海研究的基准数据源。",
+      "keyFindings": [
+        "全国海洋生产总值及占 GDP 比重",
+        "主要海洋产业增加值与增速",
+        "海洋科技创新与对外经贸情况"
+      ],
+      "relatedDimensions": [
+        "industry",
+        "capital"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "广东省海洋经济发展报告",
+      "reportType": "海洋综合",
+      "publisher": "广东省自然资源厅",
+      "publishYear": "2026",
+      "accessType": "免费公开",
+      "isFeatured": true,
+      "updateFrequency": "年度",
+      "summary": "广东省自然资源厅发布的省域海洋经济运行情况，含海洋生产总值、重点园区、重大项目进展，研判广东海洋经济“十五五”走势的基础材料。",
+      "keyFindings": [
+        "广东海洋生产总值与全国占比",
+        "海洋六大产业发展情况",
+        "沿海经济带重大项目进展"
+      ],
+      "relatedDimensions": [
+        "industry",
+        "planning"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "中国海洋信息网",
+      "reportType": "海洋监测",
+      "publisher": "国家海洋信息中心",
+      "publishYear": "持续更新",
+      "accessType": "免费公开",
+      "isFeatured": false,
+      "updateFrequency": "每日",
+      "summary": "国家海洋信息中心主办的综合性海洋信息门户，汇聚海洋观测、预报、政务信息与科普资源。",
+      "keyFindings": [
+        "海洋环境观测与预报产品",
+        "海洋政务与标准规范信息",
+        "海洋科普与数据服务入口"
+      ],
+      "relatedDimensions": [
+        "ecosystem",
+        "hub"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "FAO FishStat 渔业统计数据库",
+      "reportType": "渔业水产",
+      "publisher": "联合国粮农组织",
+      "publishYear": "2026",
+      "accessType": "免费公开",
+      "isFeatured": false,
+      "updateFrequency": "年度",
+      "summary": "联合国粮农组织渔业统计数据库，覆盖全球各国捕捞产量、水产养殖产量、渔业贸易量，是研判渔业资源与“蓝色粮仓”的国际对标数据源。",
+      "keyFindings": [
+        "全球及中国捕捞与养殖产量",
+        "水产品国际贸易流向",
+        "渔业从业人员统计"
+      ],
+      "relatedDimensions": [
+        "industry",
+        "population"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "上海航运交易所航运数据",
+      "reportType": "海运贸易",
+      "publisher": "上海航运交易所",
+      "publishYear": "持续更新",
+      "accessType": "部分免费",
+      "isFeatured": false,
+      "updateFrequency": "每日",
+      "summary": "发布中国出口集装箱运价指数（CCFI）、上海出口集装箱运价指数（SCFI）等，航运景气研判的晴雨表。",
+      "keyFindings": [
+        "CCFI / SCFI 运价指数",
+        "沿海散货运价指数",
+        "航运市场周度点评"
+      ],
+      "relatedDimensions": [
+        "hub",
+        "capital"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "中央气象台海洋天气预报",
+      "reportType": "海洋气候",
+      "publisher": "中央气象台",
+      "publishYear": "持续更新",
+      "accessType": "免费公开",
+      "isFeatured": false,
+      "updateFrequency": "每日",
+      "summary": "每日发布我国近海海域天气、海浪、海温预报及台风预警，涉海安全生产与滨海旅游的必备信息。",
+      "keyFindings": [
+        "近海海域大风、海浪预报",
+        "台风路径与强度预警",
+        "海洋灾害预警信号"
+      ],
+      "relatedDimensions": [
+        "ecosystem",
+        "hub"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "中国国际海洋经济博览会",
+      "reportType": "海洋综合",
+      "publisher": "海博会组委会",
+      "publishYear": "2026",
+      "accessType": "公开活动",
+      "isFeatured": true,
+      "updateFrequency": "年度",
+      "summary": "2026 年 10 月 22—24 日在深圳国际会展中心举办，是我国海洋经济领域规格最高的展会，是广州涉海企业参展招商、จับคู่产业对接的年度窗口。",
+      "keyFindings": [
+        "涉海参展企业与签约项目",
+        "海洋产业新技术新产品发布",
+        "同期高端论坛议题"
+      ],
+      "relatedDimensions": [
+        "industry",
+        "capital"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "IRENA 海洋能统计",
+      "reportType": "海洋新能源",
+      "publisher": "国际可再生能源署",
+      "publishYear": "2026",
+      "accessType": "免费公开",
+      "isFeatured": false,
+      "updateFrequency": "年度",
+      "summary": "IRENA 发布的全球海洋可再生能源（海上风电、潮汐能、波浪能）装机与成本统计，对标广东海上风电发展的国际坐标系。",
+      "keyFindings": [
+        "全球海上风电装机与增速",
+        "海洋能技术成本曲线",
+        "各国海洋能政策盘点"
+      ],
+      "relatedDimensions": [
+        "industry",
+        "energy"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "南海海洋环境公报",
+      "reportType": "海洋监测",
+      "publisher": "自然资源部南海局",
+      "publishYear": "2026",
+      "accessType": "免费公开",
+      "isFeatured": false,
+      "updateFrequency": "年度",
+      "summary": "自然资源部南海局发布的南海海域环境质量公报，含海水水质、沉积物、生物多样性监测评价，广州近岸海域生态研判的官方依据。",
+      "keyFindings": [
+        "南海海水水质类别比例",
+        "重点河口排污口监测",
+        "海洋生态保护修复成效"
+      ],
+      "relatedDimensions": [
+        "ecosystem",
+        "planning"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "世界银行蓝色经济数据",
+      "reportType": "宏观经济",
+      "publisher": "世界银行",
+      "publishYear": "2026",
+      "accessType": "免费公开",
+      "isFeatured": false,
+      "updateFrequency": "年度",
+      "summary": "世界银行发展的蓝色经济指标体系与国别数据，用于广州海洋经济国际对标（新加坡、香港等港口城市）。",
+      "keyFindings": [
+        "国别海洋经济增加值估算",
+        "港口物流绩效指数（LPI）",
+        "蓝色投融资案例库"
+      ],
+      "relatedDimensions": [
+        "capital",
+        "hub"
+      ]
+    }
+  ],
+  "stats": {
+    "total": 10,
+    "freeCount": 8,
+    "featuredCount": 3
+  },
+  "featured": [
+    {
+      "id": 1,
+      "title": "中国海洋经济统计公报",
+      "reportType": "海洋综合",
+      "publisher": "自然资源部",
+      "publishYear": "2026",
+      "accessType": "免费公开",
+      "isFeatured": true,
+      "updateFrequency": "年度",
+      "summary": "自然资源部每年发布的全国海洋经济运行官方统计，含海洋生产总值、增速、三次产业结构、主要海洋产业增加值等核心指标，是涉海研究的基准数据源。",
+      "keyFindings": [
+        "全国海洋生产总值及占 GDP 比重",
+        "主要海洋产业增加值与增速",
+        "海洋科技创新与对外经贸情况"
+      ],
+      "relatedDimensions": [
+        "industry",
+        "capital"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "广东省海洋经济发展报告",
+      "reportType": "海洋综合",
+      "publisher": "广东省自然资源厅",
+      "publishYear": "2026",
+      "accessType": "免费公开",
+      "isFeatured": true,
+      "updateFrequency": "年度",
+      "summary": "广东省自然资源厅发布的省域海洋经济运行情况，含海洋生产总值、重点园区、重大项目进展，研判广东海洋经济“十五五”走势的基础材料。",
+      "keyFindings": [
+        "广东海洋生产总值与全国占比",
+        "海洋六大产业发展情况",
+        "沿海经济带重大项目进展"
+      ],
+      "relatedDimensions": [
+        "industry",
+        "planning"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "中国国际海洋经济博览会",
+      "reportType": "海洋综合",
+      "publisher": "海博会组委会",
+      "publishYear": "2026",
+      "accessType": "公开活动",
+      "isFeatured": true,
+      "updateFrequency": "年度",
+      "summary": "2026 年 10 月 22—24 日在深圳国际会展中心举办，是我国海洋经济领域规格最高的展会，是广州涉海企业参展招商、จับคู่产业对接的年度窗口。",
+      "keyFindings": [
+        "涉海参展企业与签约项目",
+        "海洋产业新技术新产品发布",
+        "同期高端论坛议题"
+      ],
+      "relatedDimensions": [
+        "industry",
+        "capital"
+      ]
+    }
+  ],
+  "updated_at": "2026-09-29",
+  "note": "公开数据源名录；keyFindings 为各来源公开提供的指标/栏目，非本站编造结论"
+}
