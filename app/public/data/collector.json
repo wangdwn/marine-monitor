@@ -1,158 +1,511 @@
 {
-  "collectionStatus": {
-    "totalDimensions": 8,
-    "activeCollectors": 5,
-    "lastCollection": "2026-07-04 06:00",
-    "sources": [
-      {
-        "name": "政府公开数据",
-        "status": "正常",
-        "count": 156
-      },
-      {
-        "name": "企业直报",
-        "status": "正常",
-        "count": 89
-      },
-      {
-        "name": "自动采集",
-        "status": "部分延迟",
-        "count": 234
-      },
-      {
-        "name": "人工报送",
-        "status": "正常",
-        "count": 45
-      }
-    ],
-    "_demo": true
-  },
-  "dimensionDataStats": {
-    "totalRecords": 524,
-    "dimensions": 8,
-    "updatedToday": 32,
-    "byDimension": [
-      {
-        "code": "hub",
-        "name": "枢纽港",
-        "count": 68
-      },
-      {
-        "code": "industry",
-        "name": "产业经济",
-        "count": 120
-      },
-      {
-        "code": "population",
-        "name": "人口就业",
-        "count": 45
-      },
-      {
-        "code": "marine_tourism",
-        "name": "海洋旅游",
-        "count": 78
-      },
-      {
-        "code": "ecology",
-        "name": "生态环境",
-        "count": 56
-      },
-      {
-        "code": "policy",
-        "name": "政策法规",
-        "count": 89
-      },
-      {
-        "code": "safety",
-        "name": "安全屏障",
-        "count": 42
-      },
-      {
-        "code": "planning",
-        "name": "规划用地",
-        "count": 26
-      }
-    ],
-    "_demo": true
-  },
-  "dimensionData": {
-    "hub": {
-      "name": "枢纽港数据",
-      "values": [
-        {
-          "port": "广州港",
-          "throughput": 6.55,
-          "unit": "亿吨",
-          "year": 2025,
-          "rank": 5
-        },
-        {
-          "port": "深圳港",
-          "throughput": 3.28,
-          "unit": "亿吨",
-          "year": 2025,
-          "rank": 12
-        },
-        {
-          "port": "珠海港",
-          "throughput": 1.52,
-          "unit": "亿吨",
-          "year": 2025,
-          "rank": 22
-        }
-      ]
+  "sources": [
+    {
+      "id": 1,
+      "sourceName": "自然资源部公报",
+      "sourceUrl": "https://www.mnr.gov.cn/",
+      "priorityLevel": "P0",
+      "category": "hub",
+      "authorityLevel": 5,
+      "sustainabilityLevel": 5,
+      "structurabilityLevel": 3,
+      "priorityScore": 4.67,
+      "collectionMethod": "crawler",
+      "updateFrequency": "monthly",
+      "status": "active"
     },
-    "industry": {
-      "name": "产业经济",
-      "values": [
-        {
-          "sector": "船舶海工",
-          "output": 680,
-          "unit": "亿元",
-          "growth": "12.3%"
-        },
-        {
-          "sector": "海洋旅游",
-          "output": 520,
-          "unit": "亿元",
-          "growth": "18.5%"
-        },
-        {
-          "sector": "海洋生物医药",
-          "output": 180,
-          "unit": "亿元",
-          "growth": "22.1%"
-        },
-        {
-          "sector": "海洋新能源",
-          "output": 120,
-          "unit": "亿元",
-          "growth": "35.6%"
-        }
-      ]
+    {
+      "id": 2,
+      "sourceName": "广州市统计局",
+      "sourceUrl": "http://tjj.gz.gov.cn/",
+      "priorityLevel": "P0",
+      "category": "industry",
+      "authorityLevel": 5,
+      "sustainabilityLevel": 5,
+      "structurabilityLevel": 4,
+      "priorityScore": 4.8,
+      "collectionMethod": "crawler",
+      "updateFrequency": "yearly",
+      "status": "active"
     },
-    "population": {
-      "name": "人口与就业",
-      "values": [
-        {
-          "area": "南沙区",
-          "population": 120,
-          "employees": 45,
-          "unit": "万人"
-        },
-        {
-          "area": "黄埔区",
-          "population": 130,
-          "employees": 52,
-          "unit": "万人"
-        },
-        {
-          "area": "番禺区",
-          "population": 280,
-          "employees": 95,
-          "unit": "万人"
-        }
-      ]
+    {
+      "id": 3,
+      "sourceName": "广东省统计局",
+      "sourceUrl": "http://stats.gd.gov.cn/",
+      "priorityLevel": "P0",
+      "category": "industry",
+      "authorityLevel": 5,
+      "sustainabilityLevel": 5,
+      "structurabilityLevel": 4,
+      "priorityScore": 4.73,
+      "collectionMethod": "crawler",
+      "updateFrequency": "yearly",
+      "status": "active"
+    },
+    {
+      "id": 4,
+      "sourceName": "国家海洋信息中心",
+      "sourceUrl": "https://www.nmdis.org.cn/",
+      "priorityLevel": "P1",
+      "category": "hub",
+      "authorityLevel": 5,
+      "sustainabilityLevel": 4,
+      "structurabilityLevel": 3,
+      "priorityScore": 4.2,
+      "collectionMethod": "crawler",
+      "updateFrequency": "monthly",
+      "status": "active"
+    },
+    {
+      "id": 5,
+      "sourceName": "生态环境部",
+      "sourceUrl": "https://www.mee.gov.cn/",
+      "priorityLevel": "P1",
+      "category": "ecosystem",
+      "authorityLevel": 5,
+      "sustainabilityLevel": 4,
+      "structurabilityLevel": 3,
+      "priorityScore": 4.13,
+      "collectionMethod": "crawler",
+      "updateFrequency": "quarterly",
+      "status": "active"
+    },
+    {
+      "id": 6,
+      "sourceName": "中国招标投标公共服务平台",
+      "sourceUrl": "http://www.cebpubservice.com/",
+      "priorityLevel": "P1",
+      "category": "capital",
+      "authorityLevel": 4,
+      "sustainabilityLevel": 4,
+      "structurabilityLevel": 4,
+      "priorityScore": 4.0,
+      "collectionMethod": "api",
+      "updateFrequency": "daily",
+      "status": "active"
+    },
+    {
+      "id": 7,
+      "sourceName": "广州航运交易所",
+      "sourceUrl": "https://www.gse.cn/",
+      "priorityLevel": "P1",
+      "category": "hub",
+      "authorityLevel": 4,
+      "sustainabilityLevel": 4,
+      "structurabilityLevel": 4,
+      "priorityScore": 3.93,
+      "collectionMethod": "crawler",
+      "updateFrequency": "daily",
+      "status": "active"
+    },
+    {
+      "id": 8,
+      "sourceName": "博查政策检索",
+      "sourceUrl": "https://open.bochaai.com/",
+      "priorityLevel": "P1",
+      "category": "industry",
+      "authorityLevel": 3,
+      "sustainabilityLevel": 5,
+      "structurabilityLevel": 5,
+      "priorityScore": 4.07,
+      "collectionMethod": "api",
+      "updateFrequency": "weekly",
+      "status": "active"
+    },
+    {
+      "id": 9,
+      "sourceName": "FAO FishStat",
+      "sourceUrl": "https://www.fao.org/fishery/statistics/software/fishstatj/en",
+      "priorityLevel": "P2",
+      "category": "industry",
+      "authorityLevel": 5,
+      "sustainabilityLevel": 3,
+      "structurabilityLevel": 2,
+      "priorityScore": 3.4,
+      "collectionMethod": "manual",
+      "updateFrequency": "yearly",
+      "status": "paused"
+    },
+    {
+      "id": 10,
+      "sourceName": "中国人民银行统计",
+      "sourceUrl": "http://www.pbc.gov.cn/",
+      "priorityLevel": "P2",
+      "category": "capital",
+      "authorityLevel": 5,
+      "sustainabilityLevel": 4,
+      "structurabilityLevel": 3,
+      "priorityScore": 3.8,
+      "collectionMethod": "crawler",
+      "updateFrequency": "quarterly",
+      "status": "active"
     }
-  }
+  ],
+  "sourceStats": {
+    "total": 10,
+    "byPriority": [
+      {
+        "priorityLevel": "P0",
+        "count": 3
+      },
+      {
+        "priorityLevel": "P1",
+        "count": 5
+      },
+      {
+        "priorityLevel": "P2",
+        "count": 2
+      }
+    ]
+  },
+  "dimList": [
+    {
+      "id": 1,
+      "dimensionCode": "hub",
+      "indicatorCode": "HUB-01",
+      "indicatorName": "港口货物吞吐量",
+      "indicatorUnit": "亿吨",
+      "dataSource": "交通运输部/广州港集团",
+      "thresholdMin": 5,
+      "thresholdMax": 8
+    },
+    {
+      "id": 2,
+      "dimensionCode": "hub",
+      "indicatorCode": "HUB-02",
+      "indicatorName": "集装箱吞吐量",
+      "indicatorUnit": "万TEU",
+      "dataSource": "广州港集团",
+      "thresholdMin": 2000,
+      "thresholdMax": 2800
+    },
+    {
+      "id": 3,
+      "dimensionCode": "hub",
+      "indicatorCode": "HUB-03",
+      "indicatorName": "国际班轮航线数",
+      "indicatorUnit": "条",
+      "dataSource": "广州港集团",
+      "thresholdMin": 150,
+      "thresholdMax": 220
+    },
+    {
+      "id": 4,
+      "dimensionCode": "industry",
+      "indicatorCode": "IND-01",
+      "indicatorName": "海洋生产总值",
+      "indicatorUnit": "亿元",
+      "dataSource": "广州市统计局",
+      "thresholdMin": 3000,
+      "thresholdMax": 4500
+    },
+    {
+      "id": 5,
+      "dimensionCode": "industry",
+      "indicatorCode": "IND-02",
+      "indicatorName": "海洋渔业产值",
+      "indicatorUnit": "亿元",
+      "dataSource": "农业农村部门",
+      "thresholdMin": null,
+      "thresholdMax": null
+    },
+    {
+      "id": 6,
+      "dimensionCode": "industry",
+      "indicatorCode": "IND-03",
+      "indicatorName": "海洋旅游业产值",
+      "indicatorUnit": "亿元",
+      "dataSource": "文旅部门",
+      "thresholdMin": null,
+      "thresholdMax": null
+    },
+    {
+      "id": 7,
+      "dimensionCode": "population",
+      "indicatorCode": "POP-01",
+      "indicatorName": "涉海就业人员",
+      "indicatorUnit": "万人",
+      "dataSource": "统计部门",
+      "thresholdMin": null,
+      "thresholdMax": null
+    },
+    {
+      "id": 8,
+      "dimensionCode": "population",
+      "indicatorCode": "POP-02",
+      "indicatorName": "海洋科技人才",
+      "indicatorUnit": "人",
+      "dataSource": "科技部门",
+      "thresholdMin": null,
+      "thresholdMax": null
+    },
+    {
+      "id": 9,
+      "dimensionCode": "ecosystem",
+      "indicatorCode": "ECO-01",
+      "indicatorName": "近岸海域水质优良比例",
+      "indicatorUnit": "%",
+      "dataSource": "生态环境部",
+      "thresholdMin": 80,
+      "thresholdMax": 100
+    },
+    {
+      "id": 10,
+      "dimensionCode": "ecosystem",
+      "indicatorCode": "ECO-02",
+      "indicatorName": "红树林面积",
+      "indicatorUnit": "公顷",
+      "dataSource": "林业部门",
+      "thresholdMin": null,
+      "thresholdMax": null
+    },
+    {
+      "id": 11,
+      "dimensionCode": "ecosystem",
+      "indicatorCode": "ECO-03",
+      "indicatorName": "海岸线整治修复",
+      "indicatorUnit": "公里",
+      "dataSource": "自然资源部门",
+      "thresholdMin": null,
+      "thresholdMax": null
+    },
+    {
+      "id": 12,
+      "dimensionCode": "capital",
+      "indicatorCode": "CAP-01",
+      "indicatorName": "海洋产业投资",
+      "indicatorUnit": "亿元",
+      "dataSource": "发改部门",
+      "thresholdMin": null,
+      "thresholdMax": null
+    },
+    {
+      "id": 13,
+      "dimensionCode": "capital",
+      "indicatorCode": "CAP-02",
+      "indicatorName": "涉海企业融资",
+      "indicatorUnit": "亿元",
+      "dataSource": "金融监管部门",
+      "thresholdMin": null,
+      "thresholdMax": null
+    }
+  ],
+  "dimSummary": [
+    {
+      "code": "hub",
+      "name": "枢纽",
+      "color": "#1B3A5C",
+      "indicatorCount": 3
+    },
+    {
+      "code": "industry",
+      "name": "产业",
+      "color": "#2E7D9A",
+      "indicatorCount": 3
+    },
+    {
+      "code": "population",
+      "name": "人气",
+      "color": "#4A8B5C",
+      "indicatorCount": 2
+    },
+    {
+      "code": "ecosystem",
+      "name": "生态",
+      "color": "#D4823D",
+      "indicatorCount": 3
+    },
+    {
+      "code": "capital",
+      "name": "资本",
+      "color": "#B54848",
+      "indicatorCount": 2
+    }
+  ],
+  "glossary": [
+    {
+      "id": 1,
+      "termZh": "蓝色经济",
+      "termEn": "Blue Economy",
+      "category": "econ",
+      "definition": "以海洋资源为依托、以海洋产业为支撑的可持续发展经济模式，强调海洋生态保护与经济增长协同。",
+      "source": "世界银行"
+    },
+    {
+      "id": 2,
+      "termZh": "海洋生产总值",
+      "termEn": "Gross Ocean Product",
+      "category": "econ",
+      "definition": "一定时期内海洋经济活动创造的增加值总和，是衡量海洋经济发展规模的核心指标。",
+      "source": "国家统计局"
+    },
+    {
+      "id": 3,
+      "termZh": "海洋功能区划",
+      "termEn": "Marine Functional Zoning",
+      "category": "policy",
+      "definition": "依据海洋自然属性和社会需求，将海域划分为不同功能区，实行分区分类管理的制度。",
+      "source": "自然资源部"
+    },
+    {
+      "id": 4,
+      "termZh": "海上风电",
+      "termEn": "Offshore Wind Power",
+      "category": "industry",
+      "definition": "利用海上风能发电的清洁能源产业，是海洋新能源的主力方向。",
+      "source": "通用"
+    },
+    {
+      "id": 5,
+      "termZh": "远洋渔业",
+      "termEn": "Distant-water Fishery",
+      "category": "industry",
+      "definition": "在本国管辖海域之外从事的捕捞及配套加工、补给等渔业生产活动。",
+      "source": "农业农村部"
+    },
+    {
+      "id": 6,
+      "termZh": "海洋碳汇",
+      "termEn": "Blue Carbon",
+      "category": "industry",
+      "definition": "红树林、盐沼、海草床等滨海蓝碳生态系统吸收并储存大气二氧化碳的过程与能力。",
+      "source": "通用"
+    },
+    {
+      "id": 7,
+      "termZh": "港口吞吐量",
+      "termEn": "Port Throughput",
+      "category": "port",
+      "definition": "一定时期内经由港口装卸的货物数量，通常以万吨或万TEU计。",
+      "source": "交通运输部"
+    },
+    {
+      "id": 8,
+      "termZh": "海水淡化",
+      "termEn": "Seawater Desalination",
+      "category": "industry",
+      "definition": "去除海水中盐分生产淡水的技术与产业，是沿海地区水资源补充来源。",
+      "source": "通用"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "taskName": "政策性资金采集",
+      "taskType": "scheduled",
+      "scheduleCron": "0 9 * * 1",
+      "lastRunAt": "2026-09-28T09:00:00",
+      "lastStatus": "success"
+    },
+    {
+      "id": 2,
+      "taskName": "招标信息同步",
+      "taskType": "scheduled",
+      "scheduleCron": "45 9 * * 1",
+      "lastRunAt": "2026-09-28T09:45:00",
+      "lastStatus": "success"
+    },
+    {
+      "id": 3,
+      "taskName": "政策监测",
+      "taskType": "scheduled",
+      "scheduleCron": "0 8 * * 3",
+      "lastRunAt": "2026-09-23T08:00:00",
+      "lastStatus": "success"
+    },
+    {
+      "id": 4,
+      "taskName": "周报断更提醒",
+      "taskType": "scheduled",
+      "scheduleCron": "0 9 * * 5",
+      "lastRunAt": "2026-09-25T09:00:00",
+      "lastStatus": "success"
+    },
+    {
+      "id": 5,
+      "taskName": "周报数据包生成",
+      "taskType": "manual",
+      "scheduleCron": null,
+      "lastRunAt": "2026-09-28T10:30:00",
+      "lastStatus": "success"
+    },
+    {
+      "id": 6,
+      "taskName": "外部数据源同步",
+      "taskType": "manual",
+      "scheduleCron": null,
+      "lastRunAt": null,
+      "lastStatus": "pending"
+    }
+  ],
+  "logs": [
+    {
+      "id": 1,
+      "taskName": "政策性资金采集",
+      "status": "success",
+      "recordsCollected": 56,
+      "recordsInserted": 56,
+      "recordsRejected": 0,
+      "executionTimeMs": 48200,
+      "createdAt": "2026-09-28T09:01:12"
+    },
+    {
+      "id": 2,
+      "taskName": "招标信息同步",
+      "status": "success",
+      "recordsCollected": 15,
+      "recordsInserted": 15,
+      "recordsRejected": 0,
+      "executionTimeMs": 31500,
+      "createdAt": "2026-09-28T09:46:03"
+    },
+    {
+      "id": 3,
+      "taskName": "周报数据包生成",
+      "status": "success",
+      "recordsCollected": 16,
+      "recordsInserted": 16,
+      "recordsRejected": 0,
+      "executionTimeMs": 12800,
+      "createdAt": "2026-09-28T10:30:44"
+    },
+    {
+      "id": 4,
+      "taskName": "政策监测",
+      "status": "success",
+      "recordsCollected": 1,
+      "recordsInserted": 1,
+      "recordsRejected": 0,
+      "executionTimeMs": 96400,
+      "createdAt": "2026-09-23T08:02:31"
+    },
+    {
+      "id": 5,
+      "taskName": "周报断更提醒",
+      "status": "success",
+      "recordsCollected": 1,
+      "recordsInserted": 0,
+      "recordsRejected": 0,
+      "executionTimeMs": 3200,
+      "createdAt": "2026-09-25T09:00:15"
+    },
+    {
+      "id": 6,
+      "taskName": "政策性资金采集",
+      "status": "failed",
+      "recordsCollected": 0,
+      "recordsInserted": 0,
+      "recordsRejected": 0,
+      "executionTimeMs": 15000,
+      "createdAt": "2026-09-21T09:00:40"
+    }
+  ],
+  "logStats": {
+    "totalRuns": 6,
+    "successRuns": 5,
+    "failedRuns": 1,
+    "successRate": 83.3
+  },
+  "_demo": true,
+  "_note": "演示数据：采集系统界面演示口径，任务执行状态为示例记录"
 }
