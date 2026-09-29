@@ -14,7 +14,9 @@
         "status": "completed",
         "count": 16
       }
-    ]
+    ],
+    "totalGenerated": 16,
+    "totalSizeKb": 120
   },
   "schedules": [
     {
