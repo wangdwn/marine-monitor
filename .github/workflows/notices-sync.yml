@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  actions: write             # 允许 dispatch 部署 workflow
 
 jobs:
   sync:
@@ -50,6 +51,7 @@ jobs:
           EOF
 
       - name: 有变化才提交
+        id: pushdata
         if: steps.sync.outputs.changed == 'true'
         run: |
           git config user.name "notices-sync-bot"
@@ -63,4 +65,16 @@ jobs:
             sleep 10
           done
           git log --oneline -1
-          echo "已同步并推送，触发 Pages 重部署。"
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+      - name: 触发 Pages 重部署
+        # 注意：workflow 内用 GITHUB_TOKEN 推送不会触发 deploy.yml，
+        # 必须显式 dispatch，否则站点数据会滞后
+        if: steps.pushdata.outputs.pushed == 'true'
+        run: |
+          curl -sS -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/deploy.yml/dispatches" \
+            -d '{"ref":"main"}'
+          echo "已 dispatch Pages 部署。"

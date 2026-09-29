@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write             # 允许 push 数据回仓库
+  actions: write             # 允许 dispatch 部署 workflow
 
 jobs:
   collect:
@@ -44,20 +45,34 @@ jobs:
           EOF
 
       - name: 有变化才提交
+        id: pushdata
         run: |
           git config user.name "funding-bot"
           git config user.email "bot@users.noreply.github.com"
           git add app/public/data/funding.json
           if git diff --cached --quiet; then
             echo "数据无变化，跳过提交。"
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "chore: 自动采集 funding 数据 $(date +%Y-%m-%d)"
             # 并发推送保护：远端若已移动则 rebase 后重试
-          for i in 1 2 3; do
-            git pull --rebase origin main && git push && break
-            echo "推送冲突，10 秒后重试 ($i/3) ..."
-            sleep 10
-          done
-          git log --oneline -1
-            echo "已推送最新 funding 数据，触发 Pages 重部署。"
+            for i in 1 2 3; do
+              git pull --rebase origin main && git push && break
+              echo "推送冲突，10 秒后重试 ($i/3) ..."
+              sleep 10
+            done
+            git log --oneline -1
+            echo "pushed=true" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: 触发 Pages 重部署
+        # 注意：workflow 内用 GITHUB_TOKEN 推送不会触发 deploy.yml，
+        # 必须显式 dispatch，否则站点数据会滞后
+        if: steps.pushdata.outputs.pushed == 'true'
+        run: |
+          curl -sS -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/deploy.yml/dispatches" \
+            -d '{"ref":"main"}'
+          echo "已 dispatch Pages 部署。"
