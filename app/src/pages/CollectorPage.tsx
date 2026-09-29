@@ -1,5 +1,4 @@
-import { trpc } from "@/providers/trpc";
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import {
   Database, Activity, BookOpen, Settings, Play,
   CheckCircle2, XCircle, Search,
@@ -27,19 +26,53 @@ export default function CollectorPage() {
   const [sourceFilter, setSourceFilter] = useState({ priority: "", category: "", search: "" });
   const [glossaryFilter, setGlossaryFilter] = useState({ category: "", search: "" });
 
-  const { data: sourceList } = trpc.collector.sourceList.useQuery(sourceFilter);
-  const { data: sourceStats } = trpc.collector.sourceStats.useQuery();
-  const { data: dimList } = trpc.collector.dimensionList.useQuery();
-  const { data: dimSummary } = trpc.collector.dimensionSummary.useQuery();
-  const { data: glossaryList } = trpc.collector.glossaryList.useQuery(glossaryFilter);
-  const { data: taskList } = trpc.collector.taskList.useQuery();
-  const { data: logList } = trpc.collector.logList.useQuery({ limit: 20 });
-  const { data: logStats } = trpc.collector.logStats.useQuery();
+  // 从静态 JSON 加载数据（替代后端 trpc.collector）
+  const [cdata, setCdata] = useState<any>({});
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}data/collector.json`)
+      .then((r) => r.json())
+      .then(setCdata)
+      .catch(() => setCdata({}));
+  }, []);
 
-  const utils = trpc.useUtils();
-  const runTask = trpc.collector.taskRun.useMutation({
-    onSuccess: () => { utils.collector.taskList.invalidate(); utils.collector.logList.invalidate(); utils.collector.logStats.invalidate(); },
-  });
+  const allSources: any[] = cdata.sources ?? [];
+  const sourceList = useMemo(
+    () =>
+      allSources.filter(
+        (s) =>
+          (!sourceFilter.priority || s.priorityLevel === sourceFilter.priority) &&
+          (!sourceFilter.category || s.category === sourceFilter.category) &&
+          (!sourceFilter.search || (s.sourceName ?? "").includes(sourceFilter.search))
+      ),
+    [allSources, sourceFilter]
+  );
+  const sourceStats = useMemo(() => {
+    const counts: Record<string, number> = {};
+    allSources.forEach((s) => { counts[s.priorityLevel] = (counts[s.priorityLevel] ?? 0) + 1; });
+    return {
+      total: allSources.length,
+      byPriority: Object.entries(counts)
+        .sort(([a], [b]) => a.localeCompare(b))
+        .map(([priorityLevel, count]) => ({ priorityLevel, count })),
+    };
+  }, [allSources]);
+  const dimList: any[] = cdata.dimList ?? [];
+  const dimSummary: any[] = cdata.dimSummary ?? [];
+  const allGlossary: any[] = cdata.glossary ?? [];
+  const glossaryList = useMemo(
+    () =>
+      allGlossary.filter(
+        (g) =>
+          (!glossaryFilter.category || g.category === glossaryFilter.category) &&
+          (!glossaryFilter.search ||
+            (g.termZh ?? "").includes(glossaryFilter.search) ||
+            (g.termEn ?? "").toLowerCase().includes(glossaryFilter.search.toLowerCase()))
+      ),
+    [allGlossary, glossaryFilter]
+  );
+  const taskList: any[] = cdata.tasks ?? [];
+  const logList: any[] = (cdata.logs ?? []).slice(0, 20);
+  const logStats = cdata.logStats ?? {};
 
   const tabs: { key: TabType; label: string; icon: typeof Database }[] = [
     { key: "sources", label: "数据源", icon: Database },
@@ -58,6 +91,7 @@ export default function CollectorPage() {
           <h1 className="text-lg font-semibold text-[#1A1D21]">数据采集系统</h1>
         </div>
         <p className="text-xs text-[#6B7280]">基于钱学森系统工程 + 科学预测法的核心数据采集器</p>
+        <span className="inline-block mt-1.5 px-2 py-0.5 rounded bg-[#FEF3C7] text-[#92400E] text-[10px]">示例数据 · 界面演示口径，采集任务请前往 GitHub Actions 执行</span>
       </div>
 
       {/* Stats Cards */}
@@ -273,9 +307,9 @@ export default function CollectorPage() {
                       }`}>{t.lastStatus === "success" ? "成功" : t.lastStatus === "failed" ? "失败" : t.lastStatus === "running" ? "执行中" : "待执行"}</span>
                     </td>
                     <td className="px-4 py-3">
-                      <button onClick={() => runTask.mutate({ id: t.id ?? 0 })} disabled={runTask.isPending && runTask.variables?.id === t.id} className="px-2 py-1 rounded bg-[#1B3A5C] text-white text-[10px] hover:bg-[#152D49] transition-colors disabled:opacity-50 flex items-center gap-1">
-                        <Play className="w-3 h-3" /> {runTask.isPending && runTask.variables?.id === t.id ? "执行中" : "执行"}
-                      </button>
+                      <a href="https://github.com/wangdwn/marine-monitor/actions" target="_blank" rel="noreferrer" title="静态站无法远程执行，请前往 GitHub Actions 手动触发" className="px-2 py-1 rounded bg-[#1B3A5C] text-white text-[10px] hover:bg-[#152D49] transition-colors inline-flex items-center gap-1">
+                        <Play className="w-3 h-3" /> 前往执行
+                      </a>
                     </td>
                   </tr>
                 ))}

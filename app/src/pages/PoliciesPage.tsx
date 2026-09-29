@@ -1,5 +1,4 @@
-import { trpc } from "@/providers/trpc";
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import {
   ScrollText,
   Search,
@@ -34,17 +33,30 @@ export default function PoliciesPage() {
   const [level, setLevel] = useState("");
   const [selectedId, setSelectedId] = useState<number | null>(null);
 
-  const { data: listData } = trpc.policy.list.useQuery({
-    page,
-    limit: 10,
-    search: search || undefined,
-    level: level || undefined,
-  });
+  // 从静态 JSON 加载数据（替代后端 trpc.policy）
+  const [allPolicies, setAllPolicies] = useState<any[]>([]);
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}data/policies.json`)
+      .then((r) => r.json())
+      .then((d) => setAllPolicies(d.items ?? []))
+      .catch(() => setAllPolicies([]));
+  }, []);
 
-  const { data: detail } = trpc.policy.getById.useQuery(
-    { id: selectedId! },
-    { enabled: selectedId !== null }
-  );
+  const filtered = useMemo(() => {
+    const q = search.trim();
+    return allPolicies.filter(
+      (p) =>
+        (!q || (p.title ?? "").includes(q) || (p.contentSummary ?? "").includes(q)) &&
+        (!level || p.policyLevel === level)
+    );
+  }, [allPolicies, search, level]);
+
+  const pageSize = 10;
+  const listData = {
+    items: filtered.slice((page - 1) * pageSize, page * pageSize),
+    total: filtered.length,
+  };
+  const detail = allPolicies.find((p) => p.id === selectedId) ?? null;
 
   if (selectedId && detail) {
     const kp = detail.keyPoints ? (typeof detail.keyPoints === "string" ? JSON.parse(detail.keyPoints) : detail.keyPoints) as string[] : null;

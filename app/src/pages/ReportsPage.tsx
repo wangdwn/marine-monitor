@@ -1,5 +1,4 @@
-import { trpc } from "@/providers/trpc";
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import {
   FileText,
   Search,
@@ -44,30 +43,37 @@ export default function ReportsPage() {
   const { isAuthenticated, isAdmin, isVIP, canAccess } = useAuth();
   const [adminViewFull, setAdminViewFull] = useState(true);
 
-  const { data: listData } = trpc.report.list.useQuery({
-    page,
-    limit: 10,
-    search: search || undefined,
-    reportType: reportType || undefined,
-    trackType: trackType || undefined,
-  });
+  // 从静态 JSON 加载数据（替代后端 trpc.report）
+  const [allReports, setAllReports] = useState<any[]>([]);
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}data/reports.json`)
+      .then((r) => r.json())
+      .then((d) => setAllReports(d.items ?? []))
+      .catch(() => setAllReports([]));
+  }, []);
 
-  const { data: detail } = trpc.report.getById.useQuery(
-    { id: selectedId! },
-    { enabled: selectedId !== null }
-  );
+  const filtered = useMemo(() => {
+    const q = search.trim();
+    return allReports.filter(
+      (r) =>
+        (!q || (r.title ?? "").includes(q) || (r.summary ?? "").includes(q)) &&
+        (!reportType || r.reportType === reportType) &&
+        (!trackType || r.trackType === trackType)
+    );
+  }, [allReports, search, reportType, trackType]);
 
-  const utils = trpc.useUtils();
-  const incrementView = trpc.report.incrementView.useMutation({
-    onSuccess: () => utils.report.getById.invalidate(),
-  });
+  const pageSize = 10;
+  const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+  const listData = {
+    items: filtered.slice((page - 1) * pageSize, page * pageSize),
+    total: filtered.length,
+  };
+  const detail = allReports.find((r) => r.id === selectedId) ?? null;
 
   const openDetail = (id: number) => {
     setSelectedId(id);
-    incrementView.mutate({ id });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
-
-  const totalPages = Math.ceil((listData?.total ?? 0) / 10);
 
   const isPaidReport = (price: unknown) => Number(price) > 0;
 
@@ -206,11 +212,11 @@ export default function ReportsPage() {
               <div className="flex items-center gap-6 mt-6 text-xs text-[#6B6B6B]">
                 <span className="flex items-center gap-1">
                   <Eye className="w-3.5 h-3.5" />
-                  {detail.viewCount}次浏览
+                  {detail.date}
                 </span>
                 <span className="flex items-center gap-1">
                   <Download className="w-3.5 h-3.5" />
-                  {detail.downloadCount}次下载
+                  {detail.author}
                 </span>
                 {paid && (
                   <span className="flex items-center gap-1 text-[#D4823D]">
@@ -229,11 +235,11 @@ export default function ReportsPage() {
               <div className="flex items-center gap-6 mt-4 text-xs text-[#6B6B6B]">
                 <span className="flex items-center gap-1">
                   <Eye className="w-3.5 h-3.5" />
-                  {detail.viewCount}次浏览
+                  {detail.date}
                 </span>
                 <span className="flex items-center gap-1">
                   <Download className="w-3.5 h-3.5" />
-                  {detail.downloadCount}次下载
+                  {detail.author}
                 </span>
                 {detail.qualityScore && (
                   <span className="flex items-center gap-1 text-[#D4823D]">
@@ -567,6 +573,11 @@ export default function ReportsPage() {
                     <span className="px-2.5 py-0.5 rounded-full bg-[#F4F1EA] text-[#6B6B6B] text-xs">
                       {trackNames[report.trackType] ?? report.trackType}
                     </span>
+                    {report.isDemo && (
+                      <span className="px-2.5 py-0.5 rounded-full bg-[#FEF3C7] text-[#92400E] text-xs">
+                        示例数据
+                      </span>
+                    )}
                     {!report.coverImage && Number(report.price) > 0 && (
                       <span className="px-2.5 py-0.5 rounded-full bg-[#C45B4A]/10 text-[#C45B4A] text-xs font-medium">
                         ¥{report.price}
@@ -604,11 +615,11 @@ export default function ReportsPage() {
                   <div className="flex items-center gap-4 text-xs text-[#6B6B6B]">
                     <span className="flex items-center gap-1">
                       <Eye className="w-3.5 h-3.5" />
-                      {report.viewCount}次浏览
+                      {report.date}
                     </span>
                     <span className="flex items-center gap-1">
                       <Download className="w-3.5 h-3.5" />
-                      {report.downloadCount}次下载
+                      {report.author}
                     </span>
                   </div>
                 </div>

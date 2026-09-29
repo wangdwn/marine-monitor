@@ -1,4 +1,4 @@
-import { trpc } from "@/providers/trpc";
+import { useState, useEffect } from "react";
 import {
   ShieldCheck, AlertTriangle, Waves,
   Wind, TreePine, HardHat, Siren, Activity,
@@ -35,9 +35,17 @@ const riskLevelConfig: Record<string, { label: string; color: string }> = {
 };
 
 export default function SafetyPage() {
-  const { data: summary } = trpc.safety.summary.useQuery();
-  const { data: riskDist } = trpc.safety.riskDistribution.useQuery();
-  const { data: alerts } = trpc.safety.recentAlerts.useQuery();
+  // 从静态 JSON 加载数据（替代后端 trpc.safety）
+  const [sdata, setSdata] = useState<any>({});
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}data/safety.json`)
+      .then((r) => r.json())
+      .then(setSdata)
+      .catch(() => setSdata({}));
+  }, []);
+  const summary = sdata.summary;
+  const riskDist: any[] = sdata.riskDist ?? [];
+  const alerts: any[] = sdata.alerts ?? [];
 
   const statCards = [
     { label: "地质灾害隐患点", value: `${summary?.geoHazardTotal ?? 187}`, unit: "处", icon: AlertTriangle, color: "#B54848", sub: `已治理 ${summary?.geoHazardHandled ?? 142} 处` },
@@ -58,6 +66,7 @@ export default function SafetyPage() {
             <h1 className="text-lg font-semibold text-[#1A1D21]">安全屏障态势</h1>
           </div>
           <p className="text-xs text-[#6B7280]">广州市规划和自然资源局 — 韧性城市与地质海洋安全屏障</p>
+          <span className="inline-block mt-1.5 px-2 py-0.5 rounded bg-[#FEF3C7] text-[#92400E] text-[10px]">示例数据 · 待接入实际业务系统</span>
         </div>
         <div className="flex items-center gap-2">
           <span className="px-3 py-1.5 rounded-lg bg-[#4A8B5C]/10 text-[#4A8B5C] text-xs font-medium">

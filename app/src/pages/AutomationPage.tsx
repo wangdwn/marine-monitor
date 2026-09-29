@@ -1,5 +1,4 @@
-import { trpc } from "@/providers/trpc";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Activity,
   Play,
@@ -42,42 +41,21 @@ const statusMeta: Record<string, { label: string; color: string; icon: typeof Ch
 
 export default function AutomationPage() {
   const [activeTab, setActiveTab] = useState<"collection" | "reports">("collection");
-  const [newReportTitle, setNewReportTitle] = useState("");
-  const [newReportType, setNewReportType] = useState("research");
 
-  const { data: stats } = trpc.automation.collectionStats.useQuery();
-  const { data: reportStats } = trpc.automation.reportStats.useQuery();
-  const { data: schedules } = trpc.automation.scheduleList.useQuery();
-  const { data: executions } = trpc.automation.executionList.useQuery();
-  const { data: reports } = trpc.automation.reportList.useQuery();
-
-  const triggerMutation = trpc.automation.triggerCollection.useMutation();
-  const triggerReportMutation = trpc.automation.triggerReport.useMutation();
-
-  const utils = trpc.useUtils();
-
-  const handleTrigger = (id: number) => {
-    triggerMutation.mutate({ scheduleId: id }, {
-      onSuccess: () => {
-        utils.automation.collectionStats.invalidate();
-        utils.automation.executionList.invalidate();
-      },
-    });
-  };
-
-  const handleGenerateReport = () => {
-    if (!newReportTitle.trim()) return;
-    triggerReportMutation.mutate(
-      { title: newReportTitle, trackType: newReportType },
-      {
-        onSuccess: () => {
-          setNewReportTitle("");
-          utils.automation.reportStats.invalidate();
-          utils.automation.reportList.invalidate();
-        },
-      }
-    );
-  };
+  // 从静态 JSON 加载数据（替代后端 trpc.automation）
+  const [adata, setAdata] = useState<any>({ schedules: [], executions: [], reports: [] });
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}data/automation.json`)
+      .then((r) => r.json())
+      .then(setAdata)
+      .catch(() => setAdata({ schedules: [], executions: [], reports: [] }));
+  }, []);
+  const stats = adata.stats;
+  const reportStats = adata.reportStats;
+  const schedules: any[] = adata.schedules ?? [];
+  const executions: any[] = adata.executions ?? [];
+  const reports: any[] = adata.reports ?? [];
+  const actionsUrl: string = adata.actionsUrl ?? "https://github.com/wangdwn/marine-monitor/actions";
 
   return (
     <div className="space-y-6">
@@ -134,7 +112,7 @@ export default function AutomationPage() {
             <span className="text-xs text-[#6B7280]">已生成报告</span>
           </div>
           <p className="text-2xl font-bold text-[#1A1D21]">{reportStats?.totalGenerated ?? 0}</p>
-          <p className="text-[10px] text-[#6B7280] mt-1">均分 {reportStats?.avgQualityScore ?? 0} | 总{((reportStats?.totalSizeKb ?? 0)/1024).toFixed(1)}MB</p>
+          <p className="text-[10px] text-[#6B7280] mt-1">{reportStats?.avgQualityScore ? `均分 ${reportStats.avgQualityScore} | ` : ""}总{((reportStats?.totalSizeKb ?? 0)/1024).toFixed(1)}MB</p>
         </div>
         <div className="bg-white rounded-xl shadow-card p-4">
           <div className="flex items-center gap-2 mb-2">
@@ -170,13 +148,15 @@ export default function AutomationPage() {
                       {s.failCount > 0 && <span className="flex items-center gap-1 text-[#B54848]">失败{s.failCount}</span>}
                     </div>
                   </div>
-                  <button
-                    onClick={() => handleTrigger(s.id)}
-                    disabled={triggerMutation.isPending}
-                    className="px-3 py-1.5 rounded-lg bg-[#2E7D9A] text-white text-xs font-medium hover:bg-[#1B3A5C] transition-colors flex items-center gap-1 disabled:opacity-50"
+                  <a
+                    href={actionsUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    title="静态站无法直接触发，请前往 GitHub Actions 手动执行"
+                    className="px-3 py-1.5 rounded-lg bg-[#2E7D9A] text-white text-xs font-medium hover:bg-[#1B3A5C] transition-colors flex items-center gap-1"
                   >
-                    <Play className="w-3 h-3" /> 立即执行
-                  </button>
+                    <Play className="w-3 h-3" /> 前往执行
+                  </a>
                 </div>
               ))}
             </div>
@@ -230,39 +210,20 @@ export default function AutomationPage() {
         <div className="space-y-6">
           {/* Generate Report */}
           <div className="bg-gradient-to-r from-[#1B3A5C] to-[#2E7D9A] rounded-2xl p-6 text-white">
-            <h2 className="text-sm font-semibold mb-3 flex items-center gap-2">
-              <FilePlus className="w-4 h-4" /> 一键生成报告
+            <h2 className="text-sm font-semibold mb-2 flex items-center gap-2">
+              <FilePlus className="w-4 h-4" /> 报告生成
             </h2>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <input
-                type="text"
-                placeholder="输入报告标题，如：2025年Q2广州海洋经济分析报告"
-                value={newReportTitle}
-                onChange={(e) => setNewReportTitle(e.target.value)}
-                className="flex-1 px-4 py-2.5 rounded-xl bg-white/15 text-white placeholder-white/60 outline-none focus:ring-2 focus:ring-white/30 text-sm"
-              />
-              <select
-                value={newReportType}
-                onChange={(e) => setNewReportType(e.target.value)}
-                className="px-4 py-2.5 rounded-xl bg-white/15 text-white outline-none text-sm"
-              >
-                <option value="research">综合研究</option>
-                <option value="tourism">海洋文旅</option>
-                <option value="investment">经济投资</option>
-                <option value="industry">产业分析</option>
-                <option value="ecosystem">生态评估</option>
-              </select>
-              <button
-                onClick={handleGenerateReport}
-                disabled={!newReportTitle.trim() || triggerReportMutation.isPending}
-                className="px-5 py-2.5 rounded-xl bg-white text-[#1B3A5C text-sm font-medium hover:bg-white/90 transition-colors disabled:opacity-50 flex items-center gap-1.5"
-              >
-                <Zap className="w-4 h-4" /> 生成报告
-              </button>
-            </div>
-            {triggerReportMutation.isSuccess && (
-              <p className="text-xs text-green-300 mt-2 flex items-center gap-1"><CheckCircle className="w-3 h-3" /> {triggerReportMutation.data?.message}</p>
-            )}
+            <p className="text-xs text-white/70 mb-4 leading-relaxed">
+              静态站点无法直接生成报告。周报由每周定时任务自动生成并发布，请前往 GitHub Actions 查看或手动触发。
+            </p>
+            <a
+              href={actionsUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex px-5 py-2.5 rounded-xl bg-white text-[#1B3A5C] text-sm font-medium hover:bg-white/90 transition-colors items-center gap-1.5"
+            >
+              <Zap className="w-4 h-4" /> 前往 GitHub Actions
+            </a>
           </div>
 
           {/* Report Status Distribution */}

@@ -1,5 +1,4 @@
-import { trpc } from "@/providers/trpc";
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router";
 import {
   Globe,
@@ -50,15 +49,31 @@ export default function ExternalPage() {
   const [activeType, setActiveType] = useState("");
   const [search, setSearch] = useState("");
 
-  const { data: listData } = trpc.external.list.useQuery(
-    activeType ? { reportType: activeType, page: 1, limit: 20 } : { page: 1, limit: 20 }
-  );
-  const { data: featured } = trpc.external.featured.useQuery();
-  const { data: stats } = trpc.external.stats.useQuery();
-  const { data: detail } = trpc.external.detail.useQuery(
-    { id: selectedId! },
-    { enabled: !!selectedId }
-  );
+  // 从静态 JSON 加载数据（替代后端 trpc.external）
+  const [extData, setExtData] = useState<any>({ items: [], stats: {}, featured: [] });
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}data/external.json`)
+      .then((r) => r.json())
+      .then(setExtData)
+      .catch(() => setExtData({ items: [], stats: {}, featured: [] }));
+  }, []);
+
+  const allItems: any[] = extData.items ?? [];
+  const listData = useMemo(() => {
+    const q = search.trim();
+    const items = allItems.filter(
+      (r) =>
+        (!activeType || r.reportType === activeType) &&
+        (!q ||
+          (r.title ?? "").includes(q) ||
+          (r.publisher ?? "").includes(q) ||
+          (r.summary ?? "").includes(q))
+    );
+    return { items: items.slice(0, 20) };
+  }, [allItems, activeType, search]);
+  const featured: any[] = !activeType && !search.trim() ? extData.featured ?? [] : [];
+  const stats = extData.stats ?? {};
+  const detail = allItems.find((r) => r.id === selectedId) ?? null;
 
   if (selectedId && detail) {
     const findings = detail.keyFindings

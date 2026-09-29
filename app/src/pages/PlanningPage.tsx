@@ -1,4 +1,4 @@
-import { trpc } from "@/providers/trpc";
+import { useState, useEffect } from "react";
 import {
   ClipboardList, Target, CheckCircle2, Clock,
   TrendingUp, Map, LandPlot, Waves, BarChart3,
@@ -23,9 +23,17 @@ const planTypeColors: Record<string, string> = {
 };
 
 export default function PlanningPage() {
-  const { data: summary } = trpc.planning.summary.useQuery();
-  const { data: categoryData } = trpc.planning.categorySummary.useQuery();
-  const { data: detailData } = trpc.planning.byType.useQuery();
+  // 从静态 JSON 加载数据（替代后端 trpc.planning）
+  const [pdata, setPdata] = useState<any>({});
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}data/planning.json`)
+      .then((r) => r.json())
+      .then(setPdata)
+      .catch(() => setPdata({}));
+  }, []);
+  const summary = pdata.summary;
+  const categoryData: any[] = pdata.categoryData ?? [];
+  const detailData: any[] = pdata.detailData ?? [];
 
   const statCards = [
     { label: "空间规划合规率", value: `${summary?.spatialPlanCompliance ?? 96.8}`, unit: "%", icon: Target, color: "#1B3A5C", desc: "建设项目符合国土空间规划比例", trend: "+1.2%" },
@@ -44,6 +52,7 @@ export default function PlanningPage() {
             <h1 className="text-lg font-semibold text-[#1A1D21]">规划用地保障</h1>
           </div>
           <p className="text-xs text-[#6B7280]">广州市规划和自然资源局 — 国土空间规划与土地要素保障</p>
+          <span className="inline-block mt-1.5 px-2 py-0.5 rounded bg-[#FEF3C7] text-[#92400E] text-[10px]">示例数据 · 待接入实际业务系统</span>
         </div>
       </div>
 

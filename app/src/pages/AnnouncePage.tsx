@@ -1,5 +1,4 @@
-import { trpc } from "@/providers/trpc";
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import {
   Megaphone,
   ChevronRight,
@@ -31,16 +30,30 @@ export default function AnnouncePage() {
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const [activeCategory, setActiveCategory] = useState("");
 
-  const { data: listData } = trpc.announce.list.useQuery(
-    activeCategory ? { category: activeCategory, page: 1, limit: 20 } : { page: 1, limit: 20 }
+  // 从静态 JSON 加载数据（替代后端 trpc.announce）
+  const [allAnns, setAllAnns] = useState<any[]>([]);
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}data/announcements.json`)
+      .then((r) => r.json())
+      .then((d) => setAllAnns(d.items ?? []))
+      .catch(() => setAllAnns([]));
+  }, []);
+
+  const filtered = useMemo(
+    () => allAnns.filter((a) => !activeCategory || a.category === activeCategory),
+    [allAnns, activeCategory]
   );
-  const { data: pinnedData } = trpc.announce.pinned.useQuery();
-  const { data: latestData } = trpc.announce.latest.useQuery();
-  const { data: stats } = trpc.announce.stats.useQuery();
-  const { data: detail } = trpc.announce.detail.useQuery(
-    { id: selectedId! },
-    { enabled: !!selectedId }
-  );
+  const listData = { items: filtered.slice(0, 20) };
+  const pinnedData = allAnns.filter((a) => a.isPinned);
+  const stats = useMemo(() => {
+    const counts: Record<string, number> = {};
+    allAnns.forEach((a) => { counts[a.category] = (counts[a.category] ?? 0) + 1; });
+    return {
+      total: allAnns.length,
+      byCategory: Object.entries(counts).map(([category, count]) => ({ category, count })),
+    };
+  }, [allAnns]);
+  const detail = allAnns.find((a) => a.id === selectedId) ?? null;
 
   if (selectedId && detail) {
     const meta = categoryMeta[detail.category] ?? { label: detail.category, icon: Info, color: "#6B7280", bg: "#F0F2F5" };

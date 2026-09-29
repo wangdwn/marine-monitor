@@ -1,4 +1,4 @@
-import { trpc } from "@/providers/trpc";
+import { useState, useEffect } from "react";
 import {
   Compass, Waves, Anchor, TreePine, Microscope, Fish,
   Droplets, Gem, Activity, Radio, BarChart3,
@@ -41,10 +41,18 @@ const surveyNames: Record<string, string> = {
 };
 
 export default function SurveyPage() {
-  const { data: summary } = trpc.survey.summary.useQuery();
-  const { data: categoryData } = trpc.survey.categorySummary.useQuery();
-  const { data: stations } = trpc.survey.stations.useQuery();
-  const { data: detailData } = trpc.survey.byType.useQuery();
+  // 从静态 JSON 加载数据（替代后端 trpc.survey）
+  const [sdata, setSdata] = useState<any>({});
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}data/survey.json`)
+      .then((r) => r.json())
+      .then(setSdata)
+      .catch(() => setSdata({}));
+  }, []);
+  const summary = sdata.summary;
+  const categoryData: any[] = sdata.categoryData ?? [];
+  const stations: any[] = sdata.stations ?? [];
+  const detailData: any[] = sdata.detailData ?? [];
 
   const statCards = [
     { label: "管辖海域面积", value: `${summary?.seaArea ?? 4520}`, unit: summary?.seaAreaUnit ?? "平方公里", icon: Waves, color: "#1B3A5C", desc: "含伶仃洋、狮子洋等" },
@@ -65,6 +73,7 @@ export default function SurveyPage() {
             <h1 className="text-lg font-semibold text-[#1A1D21]">资源调查监测</h1>
           </div>
           <p className="text-xs text-[#6B7280]">广州市规划和自然资源局 — 自然资源调查监测优势</p>
+          <span className="inline-block mt-1.5 px-2 py-0.5 rounded bg-[#FEF3C7] text-[#92400E] text-[10px]">示例数据 · 待接入实际业务系统</span>
         </div>
       </div>
 
