@@ -1,31 +1,78 @@
 {
   "summary": {
-    "activeAlerts": 3,
-    "warnings": 8,
-    "resolved": 156,
-    "categories": [
-      {
-        "name": "地质灾害",
-        "count": 3,
-        "level": "橙色"
-      },
-      {
-        "name": "风暴潮",
-        "count": 2,
-        "level": "黄色"
-      },
-      {
-        "name": "海岸侵蚀",
-        "count": 1,
-        "level": "蓝色"
-      },
-      {
-        "name": "水质异常",
-        "count": 2,
-        "level": "蓝色"
-      }
-    ],
-    "lastUpdate": "2026-07-04 08:30",
+    "geoHazardTotal": 187,
+    "geoHazardHandled": 142,
+    "stormSurgeStations": 12,
+    "coastalErosionRate": 2.8,
+    "restorationArea": 1560,
+    "resilienceIndex": 78.5,
     "_demo": true
-  }
+  },
+  "riskDist": [
+    {
+      "level": "high",
+      "count": 3
+    },
+    {
+      "level": "medium",
+      "count": 8
+    },
+    {
+      "level": "low",
+      "count": 176
+    }
+  ],
+  "alerts": [
+    {
+      "id": 1,
+      "safetyType": "geological_hazard",
+      "itemName": "南沙区小虎岛崩塌隐患点",
+      "itemValue": 1,
+      "unit": "处",
+      "region": "南沙",
+      "riskLevel": "high",
+      "status": "monitoring"
+    },
+    {
+      "id": 2,
+      "safetyType": "geological_hazard",
+      "itemName": "黄埔区沿江路滑坡隐患点",
+      "itemValue": 1,
+      "unit": "处",
+      "region": "黄埔",
+      "riskLevel": "medium",
+      "status": "monitoring"
+    },
+    {
+      "id": 3,
+      "safetyType": "storm_surge",
+      "itemName": "风暴潮蓝色预警（珠江口）",
+      "itemValue": 1,
+      "unit": "次",
+      "region": "珠江口",
+      "riskLevel": "low",
+      "status": "resolved"
+    },
+    {
+      "id": 4,
+      "safetyType": "coastal_erosion",
+      "itemName": "南沙十九涌岸段侵蚀监测",
+      "itemValue": 2.8,
+      "unit": "米/年",
+      "region": "南沙",
+      "riskLevel": "medium",
+      "status": "monitoring"
+    },
+    {
+      "id": 5,
+      "safetyType": "ecological_restoration",
+      "itemName": "南沙湿地红树林修复",
+      "itemValue": 320,
+      "unit": "公顷",
+      "region": "南沙",
+      "riskLevel": "low",
+      "status": "completed"
+    }
+  ],
+  "_note": "演示数据：页面模板自带口径，无后端数据源"
 }
