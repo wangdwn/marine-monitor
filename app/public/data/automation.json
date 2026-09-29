@@ -1,0 +1,450 @@
+{
+  "stats": {
+    "activeSchedules": 5,
+    "totalSchedules": 5,
+    "successRate7d": 85.0,
+    "todayExecutions": 0,
+    "todaySuccess": 0,
+    "todayFailed": 0,
+    "todayRecords": 71
+  },
+  "reportStats": {
+    "byStatus": [
+      {
+        "status": "completed",
+        "count": 16
+      }
+    ]
+  },
+  "schedules": [
+    {
+      "id": 1,
+      "taskName": "政策性资金自动采集",
+      "dimensionCode": "policy",
+      "frequency": "每周一 09:00",
+      "cronExpression": "0 1 * * 1",
+      "isActive": true,
+      "successCount": 0,
+      "failCount": 0
+    },
+    {
+      "id": 2,
+      "taskName": "招标信息自动同步",
+      "dimensionCode": "planning",
+      "frequency": "每周一 09:45",
+      "cronExpression": "45 1 * * 1",
+      "isActive": true,
+      "successCount": 0,
+      "failCount": 0
+    },
+    {
+      "id": 3,
+      "taskName": "海洋政策轻量监测",
+      "dimensionCode": "research",
+      "frequency": "每周三 09:00",
+      "cronExpression": "0 1 * * 3",
+      "isActive": true,
+      "successCount": 0,
+      "failCount": 0
+    },
+    {
+      "id": 4,
+      "taskName": "站点部署",
+      "dimensionCode": "research",
+      "frequency": "数据/代码推送后",
+      "cronExpression": "on push",
+      "isActive": true,
+      "successCount": 0,
+      "failCount": 0
+    },
+    {
+      "id": 5,
+      "taskName": "蓝色国土周报断更检查",
+      "dimensionCode": "research",
+      "frequency": "每周五",
+      "cronExpression": "marine-weekly 仓库",
+      "isActive": true,
+      "successCount": 0,
+      "failCount": 0,
+      "note": "运行于 marine-weekly 仓库"
+    }
+  ],
+  "executions": [
+    {
+      "id": 1,
+      "taskName": "Deploy to GitHub Pages",
+      "dimensionCode": "research",
+      "status": "success",
+      "conclusion": "success",
+      "recordsCollected": null,
+      "recordsInserted": null,
+      "executionTimeMs": 52000,
+      "startedAt": "2026-09-29T03:34:46Z",
+      "htmlUrl": "https://github.com/wangdwn/marine-monitor/actions/runs/36517762227",
+      "title": "docs: 补记 GITHUB_TOKEN 推送不触发 Pages 部署的运维要点"
+    },
+    {
+      "id": 2,
+      "taskName": "Deploy to GitHub Pages",
+      "dimensionCode": "research",
+      "status": "success",
+      "conclusion": "success",
+      "recordsCollected": null,
+      "recordsInserted": null,
+      "executionTimeMs": 45000,
+      "startedAt": "2026-09-29T03:33:07Z",
+      "htmlUrl": "https://github.com/wangdwn/marine-monitor/actions/runs/36517638635",
+      "title": "fix: 数据 workflow 推送后显式 dispatch Pages 部署（GITHUB_TOKEN 推送不触发 "
+    },
+    {
+      "id": 3,
+      "taskName": "招标 notices 自动同步",
+      "dimensionCode": "research",
+      "status": "success",
+      "conclusion": "success",
+      "recordsCollected": null,
+      "recordsInserted": null,
+      "executionTimeMs": 8000,
+      "startedAt": "2026-09-28T07:36:27Z",
+      "htmlUrl": "https://github.com/wangdwn/marine-monitor/actions/runs/36392568131",
+      "title": "招标 notices 自动同步"
+    },
+    {
+      "id": 4,
+      "taskName": "海智数科 funding 数据自动采集",
+      "dimensionCode": "research",
+      "status": "success",
+      "conclusion": "success",
+      "recordsCollected": null,
+      "recordsInserted": null,
+      "executionTimeMs": 38000,
+      "startedAt": "2026-09-28T06:14:50Z",
+      "htmlUrl": "https://github.com/wangdwn/marine-monitor/actions/runs/36385500822",
+      "title": "海智数科 funding 数据自动采集"
+    },
+    {
+      "id": 5,
+      "taskName": "海智数科 funding 数据自动采集",
+      "dimensionCode": "research",
+      "status": "success",
+      "conclusion": "success",
+      "recordsCollected": null,
+      "recordsInserted": null,
+      "executionTimeMs": 32000,
+      "startedAt": "2026-09-27T02:46:18Z",
+      "htmlUrl": "https://github.com/wangdwn/marine-monitor/actions/runs/36289477133",
+      "title": "海智数科 funding 数据自动采集"
+    },
+    {
+      "id": 6,
+      "taskName": "Deploy to GitHub Pages",
+      "dimensionCode": "research",
+      "status": "success",
+      "conclusion": "success",
+      "recordsCollected": null,
+      "recordsInserted": null,
+      "executionTimeMs": 82000,
+      "startedAt": "2026-09-27T02:46:15Z",
+      "htmlUrl": "https://github.com/wangdwn/marine-monitor/actions/runs/36289475309",
+      "title": "fix: 推送加并发保护（rebase+重试）"
+    },
+    {
+      "id": 7,
+      "taskName": "Deploy to GitHub Pages",
+      "dimensionCode": "research",
+      "status": "queued",
+      "conclusion": "cancelled",
+      "recordsCollected": null,
+      "recordsInserted": null,
+      "executionTimeMs": 3000,
+      "startedAt": "2026-09-27T02:46:13Z",
+      "htmlUrl": "https://github.com/wangdwn/marine-monitor/actions/runs/36289473883",
+      "title": "fix: 推送加并发保护（rebase+重试）"
+    },
+    {
+      "id": 8,
+      "taskName": "Deploy to GitHub Pages",
+      "dimensionCode": "research",
+      "status": "success",
+      "conclusion": "success",
+      "recordsCollected": null,
+      "recordsInserted": null,
+      "executionTimeMs": 46000,
+      "startedAt": "2026-09-27T02:46:12Z",
+      "htmlUrl": "https://github.com/wangdwn/marine-monitor/actions/runs/36289472684",
+      "title": "fix: 推送加并发保护（rebase+重试），避免多 workflow 同时推送冲突"
+    },
+    {
+      "id": 9,
+      "taskName": "海智数科 funding 数据自动采集",
+      "dimensionCode": "research",
+      "status": "failed",
+      "conclusion": "failure",
+      "recordsCollected": null,
+      "recordsInserted": null,
+      "executionTimeMs": 28000,
+      "startedAt": "2026-09-27T02:34:43Z",
+      "htmlUrl": "https://github.com/wangdwn/marine-monitor/actions/runs/36288916794",
+      "title": "海智数科 funding 数据自动采集"
+    },
+    {
+      "id": 10,
+      "taskName": "招标 notices 自动同步",
+      "dimensionCode": "research",
+      "status": "success",
+      "conclusion": "success",
+      "recordsCollected": null,
+      "recordsInserted": null,
+      "executionTimeMs": 9000,
+      "startedAt": "2026-09-27T02:34:41Z",
+      "htmlUrl": "https://github.com/wangdwn/marine-monitor/actions/runs/36288915696",
+      "title": "招标 notices 自动同步"
+    },
+    {
+      "id": 11,
+      "taskName": "海洋政策轻量监测",
+      "dimensionCode": "research",
+      "status": "success",
+      "conclusion": "success",
+      "recordsCollected": null,
+      "recordsInserted": null,
+      "executionTimeMs": 16000,
+      "startedAt": "2026-09-27T02:34:40Z",
+      "htmlUrl": "https://github.com/wangdwn/marine-monitor/actions/runs/36288914423",
+      "title": "海洋政策轻量监测"
+    },
+    {
+      "id": 12,
+      "taskName": "Deploy to GitHub Pages",
+      "dimensionCode": "research",
+      "status": "success",
+      "conclusion": "success",
+      "recordsCollected": null,
+      "recordsInserted": null,
+      "executionTimeMs": 73000,
+      "startedAt": "2026-09-27T02:30:19Z",
+      "htmlUrl": "https://github.com/wangdwn/marine-monitor/actions/runs/36288702136",
+      "title": "新增：每周三政策监测workflow（需配BOCHA_API_KEY secret）"
+    },
+    {
+      "id": 13,
+      "taskName": "Deploy to GitHub Pages",
+      "dimensionCode": "research",
+      "status": "queued",
+      "conclusion": "cancelled",
+      "recordsCollected": null,
+      "recordsInserted": null,
+      "executionTimeMs": 2000,
+      "startedAt": "2026-09-27T02:30:18Z",
+      "htmlUrl": "https://github.com/wangdwn/marine-monitor/actions/runs/36288701100",
+      "title": "新增：博查轻量政策监测脚本（每周扫政策面）"
+    },
+    {
+      "id": 14,
+      "taskName": "Deploy to GitHub Pages",
+      "dimensionCode": "research",
+      "status": "queued",
+      "conclusion": "cancelled",
+      "recordsCollected": null,
+      "recordsInserted": null,
+      "executionTimeMs": 2000,
+      "startedAt": "2026-09-27T02:30:17Z",
+      "htmlUrl": "https://github.com/wangdwn/marine-monitor/actions/runs/36288700124",
+      "title": "funding采集：运行页输出新增条目摘要"
+    },
+    {
+      "id": 15,
+      "taskName": "Deploy to GitHub Pages",
+      "dimensionCode": "research",
+      "status": "queued",
+      "conclusion": "cancelled",
+      "recordsCollected": null,
+      "recordsInserted": null,
+      "executionTimeMs": 2000,
+      "startedAt": "2026-09-27T02:30:16Z",
+      "htmlUrl": "https://github.com/wangdwn/marine-monitor/actions/runs/36288699356",
+      "title": "funding采集：支持FUNDING_DIFF_OUT输出采集摘要"
+    }
+  ],
+  "reports": [
+    {
+      "id": 16,
+      "reportTitle": "海洋经济与蓝色国土周报·第16期",
+      "trackType": "research",
+      "status": "completed",
+      "triggerType": "scheduled",
+      "dataSourcesUsed": null,
+      "createdAt": "2026年9月28日",
+      "qualityScore": 0,
+      "generationTimeMs": 0
+    },
+    {
+      "id": 15,
+      "reportTitle": "海洋经济与蓝色国土周报·第15期",
+      "trackType": "research",
+      "status": "completed",
+      "triggerType": "scheduled",
+      "dataSourcesUsed": null,
+      "createdAt": "2026年9月27日",
+      "qualityScore": 0,
+      "generationTimeMs": 0
+    },
+    {
+      "id": 14,
+      "reportTitle": "海洋经济与蓝色国土周报·第14期",
+      "trackType": "research",
+      "status": "completed",
+      "triggerType": "scheduled",
+      "dataSourcesUsed": null,
+      "createdAt": "2026年9月19日",
+      "qualityScore": 0,
+      "generationTimeMs": 0
+    },
+    {
+      "id": 13,
+      "reportTitle": "海洋经济与蓝色国土周报·第13期",
+      "trackType": "research",
+      "status": "completed",
+      "triggerType": "scheduled",
+      "dataSourcesUsed": null,
+      "createdAt": "2026年9月14日",
+      "qualityScore": 0,
+      "generationTimeMs": 0
+    },
+    {
+      "id": 12,
+      "reportTitle": "海洋经济与蓝色国土周报·第12期",
+      "trackType": "research",
+      "status": "completed",
+      "triggerType": "scheduled",
+      "dataSourcesUsed": null,
+      "createdAt": "2026年9月7日",
+      "qualityScore": 0,
+      "generationTimeMs": 0
+    },
+    {
+      "id": 11,
+      "reportTitle": "海洋经济与蓝色国土周报·第11期",
+      "trackType": "research",
+      "status": "completed",
+      "triggerType": "scheduled",
+      "dataSourcesUsed": null,
+      "createdAt": "2026年9月4日",
+      "qualityScore": 0,
+      "generationTimeMs": 0
+    },
+    {
+      "id": 10,
+      "reportTitle": "海洋经济与蓝色国土周报·第10期",
+      "trackType": "research",
+      "status": "completed",
+      "triggerType": "scheduled",
+      "dataSourcesUsed": null,
+      "createdAt": "2026年8月31日",
+      "qualityScore": 0,
+      "generationTimeMs": 0
+    },
+    {
+      "id": 9,
+      "reportTitle": "海洋经济与蓝色国土周报·第9期",
+      "trackType": "research",
+      "status": "completed",
+      "triggerType": "scheduled",
+      "dataSourcesUsed": null,
+      "createdAt": "2026年8月24日",
+      "qualityScore": 0,
+      "generationTimeMs": 0
+    },
+    {
+      "id": 8,
+      "reportTitle": "海洋经济与蓝色国土周报·第8期",
+      "trackType": "research",
+      "status": "completed",
+      "triggerType": "scheduled",
+      "dataSourcesUsed": null,
+      "createdAt": "2026年8月17日",
+      "qualityScore": 0,
+      "generationTimeMs": 0
+    },
+    {
+      "id": 7,
+      "reportTitle": "海洋经济与蓝色国土周报·第7期",
+      "trackType": "research",
+      "status": "completed",
+      "triggerType": "scheduled",
+      "dataSourcesUsed": null,
+      "createdAt": "2026年8月10日",
+      "qualityScore": 0,
+      "generationTimeMs": 0
+    },
+    {
+      "id": 6,
+      "reportTitle": "海洋经济与蓝色国土周报·第6期",
+      "trackType": "research",
+      "status": "completed",
+      "triggerType": "scheduled",
+      "dataSourcesUsed": null,
+      "createdAt": "2026年8月4日",
+      "qualityScore": 0,
+      "generationTimeMs": 0
+    },
+    {
+      "id": 5,
+      "reportTitle": "海洋经济与蓝色国土周报·第5期",
+      "trackType": "research",
+      "status": "completed",
+      "triggerType": "scheduled",
+      "dataSourcesUsed": null,
+      "createdAt": "2026年7月19日",
+      "qualityScore": 0,
+      "generationTimeMs": 0
+    },
+    {
+      "id": 4,
+      "reportTitle": "海洋经济与蓝色国土周报·第4期",
+      "trackType": "research",
+      "status": "completed",
+      "triggerType": "scheduled",
+      "dataSourcesUsed": null,
+      "createdAt": "2026年7月15日",
+      "qualityScore": 0,
+      "generationTimeMs": 0
+    },
+    {
+      "id": 3,
+      "reportTitle": "海洋经济与蓝色国土周报·第3期",
+      "trackType": "research",
+      "status": "completed",
+      "triggerType": "scheduled",
+      "dataSourcesUsed": null,
+      "createdAt": "2026年7月3日",
+      "qualityScore": 0,
+      "generationTimeMs": 0
+    },
+    {
+      "id": 2,
+      "reportTitle": "海洋经济与蓝色国土周报·第2期",
+      "trackType": "research",
+      "status": "completed",
+      "triggerType": "scheduled",
+      "dataSourcesUsed": null,
+      "createdAt": "2026年6月29日",
+      "qualityScore": 0,
+      "generationTimeMs": 0
+    },
+    {
+      "id": 1,
+      "reportTitle": "海洋经济与蓝色国土周报·第1期",
+      "trackType": "research",
+      "status": "completed",
+      "triggerType": "scheduled",
+      "dataSourcesUsed": null,
+      "createdAt": "2026年6月22日",
+      "qualityScore": 0,
+      "generationTimeMs": 0
+    }
+  ],
+  "actionsUrl": "https://github.com/wangdwn/marine-monitor/actions",
+  "generated_at": "2026-09-29",
+  "note": "运行记录来自 GitHub Actions 真实 run 数据"
+}
