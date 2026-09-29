@@ -1,29 +1,98 @@
 {
   "summary": {
-    "totalProjects": 42,
-    "approved": 28,
-    "pending": 8,
-    "rejected": 6,
-    "categories": [
-      {
-        "name": "用海审批",
-        "count": 15
-      },
-      {
-        "name": "海洋功能区划",
-        "count": 8
-      },
-      {
-        "name": "产业规划",
-        "count": 10
-      },
-      {
-        "name": "生态保护",
-        "count": 9
-      }
-    ],
-    "areaTotal": "3,520公顷",
-    "areaUsed": "2,180公顷",
+    "spatialPlanCompliance": 96.8,
+    "seaApprovalCount": 128,
+    "projectSupportCount": 45,
+    "marineFunctionCoverage": 98.2,
     "_demo": true
-  }
+  },
+  "categoryData": [
+    {
+      "type": "spatial_plan",
+      "name": "国土空间规划",
+      "count": 14
+    },
+    {
+      "type": "marine_function",
+      "name": "海洋功能区划",
+      "count": 9
+    },
+    {
+      "type": "coastal_protection",
+      "name": "海岸带保护",
+      "count": 7
+    },
+    {
+      "type": "land_supply",
+      "name": "土地供应",
+      "count": 11
+    },
+    {
+      "type": "sea_approval",
+      "name": "用海审批",
+      "count": 16
+    },
+    {
+      "type": "project_support",
+      "name": "重大项目保障",
+      "count": 8
+    }
+  ],
+  "detailData": [
+    {
+      "id": 1,
+      "planType": "spatial_plan",
+      "indicatorName": "规划编制完成率",
+      "indicatorValue": 96.8,
+      "unit": "%",
+      "targetValue": 100,
+      "completionRate": 96.8
+    },
+    {
+      "id": 2,
+      "planType": "marine_function",
+      "indicatorName": "功能区划覆盖率",
+      "indicatorValue": 98.2,
+      "unit": "%",
+      "targetValue": 100,
+      "completionRate": 98.2
+    },
+    {
+      "id": 3,
+      "planType": "coastal_protection",
+      "indicatorName": "整治修复海岸线",
+      "indicatorValue": 12.5,
+      "unit": "公里",
+      "targetValue": 15,
+      "completionRate": 83.3
+    },
+    {
+      "id": 4,
+      "planType": "land_supply",
+      "indicatorName": "涉海项目供地",
+      "indicatorValue": 2850.5,
+      "unit": "亩",
+      "targetValue": 3000,
+      "completionRate": 95.0
+    },
+    {
+      "id": 5,
+      "planType": "sea_approval",
+      "indicatorName": "用海审批办结",
+      "indicatorValue": 128,
+      "unit": "宗",
+      "targetValue": 135,
+      "completionRate": 94.8
+    },
+    {
+      "id": 6,
+      "planType": "project_support",
+      "indicatorName": "重大项目保障",
+      "indicatorValue": 45,
+      "unit": "个",
+      "targetValue": 48,
+      "completionRate": 93.8
+    }
+  ],
+  "_note": "演示数据：页面模板自带口径，无后端数据源"
 }
