@@ -1,6 +1,6 @@
 {
   "schema": "structure_judgment/1.0",
-  "generated_at": "2026-09-19T08:18:08",
+  "generated_at": "2026-10-01T08:22:00",
   "positioning": "监测研判台 ≠ 广海汇撮合黄页。指标均可追溯至 JSON 字段或脚本输出；无数据标〔待核〕。",
   "家底盘": {
     "title": "家底盘",
@@ -153,10 +153,52 @@
     "changelog": "data/content_refresh_changelog.json + data/reports/",
     "vs_ghh": "本站做结构判断与对账；广海汇是产业撮合平台。",
     "weekly_latest": {
-      "issue": 14,
-      "url": "https://wangdwn.github.io/marine-weekly/#issue-14",
-      "dateRange": "9月15日—9月19日",
-      "source": "marine-weekly/data/issue-14.json"
+      "issue": 16,
+      "url": "https://wangdwn.github.io/marine-weekly/#issue-16",
+      "dateRange": "9月27日—9月28日",
+      "source": "marine-weekly/data/issue-16.json"
     }
+  },
+  "游艇盘": {
+    "title": "游艇盘",
+    "note": "取自《海洋经济与蓝色国土周报》第 4 期（7 月 3 日—7 月 15 日，游艇双周专题）——本盘为该期监测指标的常设化挂载，随周报同步刷新。",
+    "metrics": [
+      {
+        "id": "yacht_free_travel_weeks",
+        "label": "粤港澳游艇自由行实施周数",
+        "value": 6,
+        "unit": "周",
+        "source": "marine-weekly/data/issue-4.json#tabs.overview.kpis[0]"
+      },
+      {
+        "id": "nansha_yacht_policy",
+        "label": "南沙游艇新政",
+        "value": 12,
+        "unit": "条",
+        "source": "marine-weekly/data/issue-4.json#tabs.overview.kpis[1]"
+      },
+      {
+        "id": "gz_electric_boats",
+        "label": "广州电动游船新增",
+        "value": 10,
+        "unit": "艘",
+        "source": "marine-weekly/data/issue-4.json#tabs.overview.kpis[3]"
+      },
+      {
+        "id": "shipyard_orders",
+        "label": "广船国际+黄埔文冲在手订单",
+        "value": 540,
+        "unit": "亿元",
+        "source": "marine-weekly/data/issue-4.json#tabs.portship.kpis[0]"
+      },
+      {
+        "id": "jl_overseas_orders",
+        "label": "江龙船艇海外合同",
+        "value": 1.26,
+        "unit": "亿元",
+        "source": "marine-weekly/data/issue-4.json#tabs.portship.kpis[1]"
+      }
+    ],
+    "drilldown": "https://wangdwn.github.io/marine-weekly/#issue-4"
   }
 }

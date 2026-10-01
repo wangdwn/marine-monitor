@@ -62,6 +62,12 @@ type StructureJudgment = {
     drift_note: string;
     drilldown: string;
   };
+  游艇盘: {
+    title: string;
+    note?: string;
+    metrics: Metric[];
+    drilldown: string;
+  };
   底座: {
     title: string;
     source_snapshot_at?: string;
@@ -294,6 +300,34 @@ export default function Dashboard() {
         <p className="text-xs text-[#6B7280]">{data.质量盘.drift_note}</p>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
           {data.质量盘.metrics.map((m) => (
+            <div key={m.id} className="bg-white rounded-xl border border-[#E2E5EA] p-4">
+              <p className="text-xs text-[#6B7280]">{m.label}</p>
+              <MetricValue value={m.value} unit={m.unit} />
+              <SourceTag source={m.source} />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 游艇盘 */}
+      <section className="space-y-3">
+        <div className="flex items-center justify-between gap-3 flex-wrap">
+          <div className="flex items-center gap-2">
+            <Radar className="w-4 h-4 text-[#1B5F6E]" />
+            <h2 className="text-sm font-semibold text-[#1A1D21]">{data.游艇盘.title}</h2>
+          </div>
+          <a
+            href={data.游艇盘.drilldown}
+            target="_blank"
+            rel="noreferrer"
+            className="text-xs text-[#2E7D9A] hover:underline inline-flex items-center gap-1"
+          >
+            周报第 4 期 <ExternalLink className="w-3 h-3" />
+          </a>
+        </div>
+        {data.游艇盘.note ? <p className="text-xs text-[#6B7280]">{data.游艇盘.note}</p> : null}
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-3">
+          {data.游艇盘.metrics.map((m) => (
             <div key={m.id} className="bg-white rounded-xl border border-[#E2E5EA] p-4">
               <p className="text-xs text-[#6B7280]">{m.label}</p>
               <MetricValue value={m.value} unit={m.unit} />
