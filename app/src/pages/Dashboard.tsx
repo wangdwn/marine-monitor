@@ -66,6 +66,12 @@ type StructureJudgment = {
     title: string;
     note?: string;
     metrics: Metric[];
+    series?: Array<{
+      issue: number;
+      dateRange: string;
+      url: string;
+      items: Array<{ label: string; value: string | number; unit?: string; change?: string; source: string }>;
+    }>;
     drilldown: string;
   };
   底座: {
@@ -335,6 +341,42 @@ export default function Dashboard() {
             </div>
           ))}
         </div>
+        {data.游艇盘.series && data.游艇盘.series.length ? (
+          <div className="bg-white rounded-xl border border-[#E2E5EA] p-5 space-y-4">
+            <p className="text-xs text-[#6B7280]">指标时间序列（按周报期数滚动）</p>
+            {data.游艇盘.series.map((s) => (
+              <div key={s.issue} className="border-l-2 border-[#1B5F6E]/30 pl-4 space-y-2">
+                <div className="flex items-center gap-3 flex-wrap">
+                  <span className="text-xs font-mono px-2 py-0.5 rounded bg-[#EAF3F5] text-[#1B5F6E]">
+                    第 {s.issue} 期
+                  </span>
+                  <span className="text-xs text-[#6B7280]">{s.dateRange}</span>
+                  <a
+                    href={s.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-xs text-[#2E7D9A] hover:underline inline-flex items-center gap-1"
+                  >
+                    周报原文 <ExternalLink className="w-3 h-3" />
+                  </a>
+                </div>
+                {s.items.map((m, mi) => (
+                  <div key={mi}>
+                    <div className="flex items-baseline justify-between gap-3 flex-wrap">
+                      <span className="text-sm text-[#1A1D21]">{m.label}</span>
+                      <span className="text-sm font-mono text-[#1A1D21]">
+                        {m.value}
+                        {m.unit ? <span className="text-xs text-[#6B7280]"> {m.unit}</span> : null}
+                        {m.change ? <span className="text-xs text-[#9CA3AF] ml-2">{m.change}</span> : null}
+                      </span>
+                    </div>
+                    <SourceTag source={m.source} />
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        ) : null}
       </section>
 
       {/* 底座 */}

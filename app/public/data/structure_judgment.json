@@ -1,6 +1,6 @@
 {
   "schema": "structure_judgment/1.0",
-  "generated_at": "2026-10-01T08:22:00",
+  "generated_at": "2026-10-01T08:31:50",
   "positioning": "监测研判台 ≠ 广海汇撮合黄页。指标均可追溯至 JSON 字段或脚本输出；无数据标〔待核〕。",
   "家底盘": {
     "title": "家底盘",
@@ -161,7 +161,7 @@
   },
   "游艇盘": {
     "title": "游艇盘",
-    "note": "取自《海洋经济与蓝色国土周报》第 4 期（7 月 3 日—7 月 15 日，游艇双周专题）——本盘为该期监测指标的常设化挂载，随周报同步刷新。",
+    "note": "取自《海洋经济与蓝色国土周报》各期游艇／船舶类监测指标（2026 年 6 月—9 月）。上排为第 4 期（游艇双周专题）锚点，下方为按期滚动的时间序列；每条均可追溯至对应期 JSON 字段，周报刷新即同步。",
     "metrics": [
       {
         "id": "yacht_free_travel_weeks",
@@ -197,6 +197,99 @@
         "value": 1.26,
         "unit": "亿元",
         "source": "marine-weekly/data/issue-4.json#tabs.portship.kpis[1]"
+      }
+    ],
+    "series": [
+      {
+        "issue": 1,
+        "dateRange": "6月15日—6月21日",
+        "url": "https://wangdwn.github.io/marine-weekly/#issue-1",
+        "items": [
+          {
+            "label": "南沙邮轮出入境旅客",
+            "value": "1.8",
+            "unit": "万人次",
+            "change": "+15.2%",
+            "source": "marine-weekly/data/issue-1.json#tabs.overview.kpis[2]"
+          }
+        ]
+      },
+      {
+        "issue": 2,
+        "dateRange": "6月22日—6月28日",
+        "url": "https://wangdwn.github.io/marine-weekly/#issue-2",
+        "items": [
+          {
+            "label": "南沙游艇泊位建成率",
+            "value": "40.3",
+            "unit": "%",
+            "change": "142/352 座",
+            "source": "marine-weekly/data/issue-2.json#tabs.overview.kpis[2]"
+          }
+        ]
+      },
+      {
+        "issue": 4,
+        "dateRange": "7月3日—7月15日",
+        "url": "https://wangdwn.github.io/marine-weekly/#issue-4",
+        "items": [
+          {
+            "label": "粤港澳游艇自由行实施周数",
+            "value": "6",
+            "unit": "周",
+            "change": "6月18日起实施",
+            "source": "marine-weekly/data/issue-4.json#tabs.overview.kpis[0]"
+          },
+          {
+            "label": "南沙游艇新政",
+            "value": "12",
+            "unit": "条",
+            "change": "游艇12条+联盟成立",
+            "source": "marine-weekly/data/issue-4.json#tabs.overview.kpis[1]"
+          },
+          {
+            "label": "广州电动游船新增",
+            "value": "10",
+            "unit": "艘",
+            "change": "4亿元投资",
+            "source": "marine-weekly/data/issue-4.json#tabs.overview.kpis[3]"
+          },
+          {
+            "label": "江龙船艇海外合同",
+            "value": "1.26",
+            "unit": "亿元",
+            "change": "在手订单25亿",
+            "source": "marine-weekly/data/issue-4.json#tabs.portship.kpis[1]"
+          }
+        ]
+      },
+      {
+        "issue": 8,
+        "dateRange": "8月11日—8月17日",
+        "url": "https://wangdwn.github.io/marine-weekly/#issue-8",
+        "items": [
+          {
+            "label": "南沙邮轮母港（上半年）",
+            "value": "全国第三",
+            "unit": "",
+            "change": "增速最快母港",
+            "source": "marine-weekly/data/issue-8.json#tabs.overview.kpis[2]"
+          }
+        ]
+      },
+      {
+        "issue": 15,
+        "dateRange": "9月20日—9月26日",
+        "url": "https://wangdwn.github.io/marine-weekly/#issue-15",
+        "items": [
+          {
+            "label": "1—8月海洋船舶新接订单量",
+            "value": "+83.7",
+            "unit": "%",
+            "change": "同比；海工装备订单金额 +160.8%",
+            "source": "marine-weekly/data/issue-15.json#tabs.overview.kpis[4]"
+          }
+        ]
       }
     ],
     "drilldown": "https://wangdwn.github.io/marine-weekly/#issue-4"
