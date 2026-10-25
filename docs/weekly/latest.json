@@ -1,14 +1,18 @@
 {
-  "updated_at": "2026年10月12日",
-  "source": "https://wangdw.xyz/marine-weekly/",
-  "latest_issue": 18,
-  "title": "海洋经济与蓝色国土周报",
-  "dateRange": "10月6日—10月12日",
+  "updated_at": "2026年10月25日",
+  "source": "https://wangdwn.github.io/marine-weekly/",
+  "latest_issue": 20,
+  "title": "海洋经济与蓝色国土周报·第20期",
+  "dateRange": "10月20日—10月26日",
   "highlights": [
-    "广州港9月集装箱吞吐量",
-    "第29号台风“小熊”",
-    "2026海博会",
-    "南沙邮轮母港",
-    "本期窗口（10月6日—10月12日）跨越国庆假期返程，本地信号以港口数据与海博会前瞻为主。核心有四：一、广州港10月8日披露9月生产经营数据，集装箱吞吐量239.6万标准箱、同比增长19.6%，货物吞吐量5130.5万吨、同比增长12.5%"
-  ]
+    "本期要点速览",
+    "蓝碳与海洋碳汇",
+    "海岸带与地质安全",
+    "海上风电与新能源",
+    "海洋生物医药",
+    "港口航运与船舶海工"
+  ],
+  "previous_issue": 19,
+  "note": "第20期：统计调查督填／东盟通道／SCFI旁证／海博会；指标可追溯，未编造财务。同步自 marine-weekly issue-20。",
+  "url": "https://wangdwn.github.io/marine-weekly/#issue-20"
 }

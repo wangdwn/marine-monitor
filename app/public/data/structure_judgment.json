@@ -1,6 +1,6 @@
 {
   "schema": "structure_judgment/1.0",
-  "generated_at": "2026-10-01T08:31:50",
+  "generated_at": "2026-10-25T09:47:30",
   "positioning": "监测研判台 ≠ 广海汇撮合黄页。指标均可追溯至 JSON 字段或脚本输出；无数据标〔待核〕。",
   "家底盘": {
     "title": "家底盘",
@@ -124,7 +124,7 @@
   "底座": {
     "title": "口径底座",
     "source_snapshot_at": "2026-08-25",
-    "content_refreshed_at": "2026-09-04",
+    "content_refreshed_at": "2026-10-25",
     "tag_rules_version": null,
     "schema": "1.3",
     "source": "广海汇 ghh.gzlpc.gov.cn + 公开上市/工商核验",
@@ -153,10 +153,11 @@
     "changelog": "data/content_refresh_changelog.json + data/reports/",
     "vs_ghh": "本站做结构判断与对账；广海汇是产业撮合平台。",
     "weekly_latest": {
-      "issue": 16,
-      "url": "https://wangdwn.github.io/marine-weekly/#issue-16",
-      "dateRange": "9月27日—9月28日",
-      "source": "marine-weekly/data/issue-16.json"
+      "issue": 20,
+      "url": "https://wangdwn.github.io/marine-weekly/#issue-20",
+      "dateRange": "10月20日—10月26日",
+      "source": "marine-weekly/data/issue-20.json",
+      "publishDate": "2026年10月25日"
     }
   },
   "游艇盘": {
