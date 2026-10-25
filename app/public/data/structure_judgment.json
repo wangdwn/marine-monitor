@@ -1,6 +1,6 @@
 {
   "schema": "structure_judgment/1.0",
-  "generated_at": "2026-10-25T09:47:30",
+  "generated_at": "2026-10-25T10:10:00",
   "positioning": "监测研判台 ≠ 广海汇撮合黄页。指标均可追溯至 JSON 字段或脚本输出；无数据标〔待核〕。",
   "家底盘": {
     "title": "家底盘",
@@ -47,6 +47,31 @@
         "value": 715,
         "unit": "家",
         "source": "enterprises.json#meta.credit_code_filled"
+      },
+      {
+        "id": "ocean_gdp_2025",
+        "label": "海洋生产总值（2025）",
+        "value": 5231,
+        "unit": "亿元",
+        "share_of_city_gdp_pct": 16.3,
+        "source": "gz.gov.cn post_10850771 / post_10839195；gzdaily 2026-10-22",
+        "source_urls": [
+          "https://www.gz.gov.cn/zt/qltjygadwqjsxsdzgzlfzdf/gzzxd/content/post_10850771.html",
+          "https://gzdaily.dayoo.com/pc/html/2026-10/22/content_867_916566.htm"
+        ],
+        "note": "市公开年值；当季〔待核〕。同步自 dashboard accounting/gdp_total.json"
+      },
+      {
+        "id": "ocean_gdp_2024",
+        "label": "海洋生产总值（2024）",
+        "value": 4979,
+        "unit": "亿元",
+        "share_of_province_pct": 25,
+        "source": "全省海洋经济工作会议成绩单（21jingji 2025-06-26）",
+        "source_urls": [
+          "https://www.21jingji.com/article/20250626/herald/00065d568ab071cf1edff0ee3d88e74e.html"
+        ],
+        "note": "市公开年值"
       }
     ],
     "drilldown": "https://wangdwn.github.io/guangzhou-marine-enterprises/"
@@ -148,6 +173,16 @@
         "id": "notices_formal_url",
         "label": "龙穴北基地正式交易平台原文链接〔待核〕（现为转载页）",
         "source": "geo-ocean-bidding/docs/data/notices.json#nansha-longxue-base-plan-20260911"
+      },
+      {
+        "id": "ocean_gdp_quarterly",
+        "label": "广州海洋GDP当季总量〔待核〕（年值2025=5231亿已入库）",
+        "source": "guangzhou-ocean-dashboard/data/accounting/gdp_total.json#gz_ocean_gdp_quarterly"
+      },
+      {
+        "id": "marine_employment",
+        "label": "市涉海就业人数／劳动报酬〔待核〕（省渔民纯收入已录）",
+        "source": "data/accounting/employment.json"
       }
     ],
     "changelog": "data/content_refresh_changelog.json + data/reports/",
@@ -158,6 +193,10 @@
       "dateRange": "10月20日—10月26日",
       "source": "marine-weekly/data/issue-20.json",
       "publishDate": "2026年10月25日"
+    },
+    "accounting_public_fill": {
+      "at": "2026-10-25T10:06:00+0800",
+      "summary": "公开网补采：市海洋GDP年值、省渔民收入、科创机构数、BDI业务日、港航9月、蓝碳签发、邮轮客流"
     }
   },
   "游艇盘": {
